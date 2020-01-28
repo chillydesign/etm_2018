@@ -527,9 +527,18 @@ div#mylightbox { display: none; }
 
 .social_link_container {
   /* padding: 20px ; */
-  margin: -10px  0 0;
+  margin: -10px  00;
   /* background: #f1f1f1; */
 }
+
+@media only screen and (max-width:500px) {
+
+  .social_link_container {
+margin-bottom: 30px;
+text-align: center;
+  }
+}
+
 a.social_link {
   display:inline-block;
   margin: 0 5px;
@@ -561,7 +570,7 @@ input.input_for_copying {
 
 a.social_link em {
   display:none;
-padding: 0;
+  padding: 0;
 
 }
 
