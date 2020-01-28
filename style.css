@@ -532,10 +532,20 @@ div#mylightbox { display: none; }
 }
 a.social_link {
   display:inline-block;
-  padding: 10px;
+  margin: 0 5px;
 }
 a.social_link i {
-  background: #ddd;
+  background:  #ddd;
+  text-indent: 0;  
+  font-size: 18px;
+  width: 40px;
+  height: 40px;
+    line-height: 40px;
+  text-align: center;
+  border-radius: 50%;
+}
+a.social_link span {
+  display:none;
 }
 
 

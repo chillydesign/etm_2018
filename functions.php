@@ -133,7 +133,7 @@ add_action('after_setup_theme', 'remove_json_api');
 
 function wf_version()
 {
-    return '0.0.2';
+    return '0.0.3';
 }
 
 
@@ -815,10 +815,10 @@ function generate_social_links($url, $title) {
     $str = '<div class="social_link_container" id="'. $rand_id.'">';
     $str .= '<input type="hidden" class="input_for_copying" name="" >';
 
-    $str .= '<a class="social_link" href="' . $url . '" target="_blank" ><i class="fa fa-facebook-f" aria-hidden="true"></i>'. $title.'</a>';
-    $str .= '<aclass="social_link"  href="' . $url . '" target="_blank" ><i class="fa fa-whatsapp" aria-hidden="true"></i>'. $title.'</a>';
-    $str .= '<a class="social_link" href="' . $url . '" target="_blank" ><i class="fa fa-envelope" aria-hidden="true"></i>'. $title.'</a>';
-    $str .= '<a class="social_link" href="' . $url . '" target="_blank" ><i class="fa fa-copy" aria-hidden="true"></i>'. $title.'</a>';
+    $str .= '<a title="Facebook" class="social_link" href="' . $url . '" target="_blank" ><i class="fa fa-facebook-f" aria-hidden="true"></i><span>Facebook</span></a>';
+    $str .= '<a title="Whatsapp" class="social_link" href="' . $url . '" target="_blank" ><i class="fa fa-whatsapp" aria-hidden="true"></i><span>Whatsapp</span></a>';
+    $str .= '<a title="Email" class="social_link" href="' . $url . '" target="_blank" ><i class="fa fa-envelope" aria-hidden="true"></i><span>Email</span></a>';
+    $str .= '<a title="Copy link" class="social_link" href="' . $url . '" target="_blank" ><i class="fa fa-copy" aria-hidden="true"></i><span>Copy link</span></a>';
 
     $str .= '</div><!-- END OF SOCIAL_LINK_CONTAINER -->';
     echo $str;
