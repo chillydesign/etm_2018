@@ -151,6 +151,25 @@ function html5blank_header_scripts()
         wp_register_script('modernizr', $tdu . '/js/lib/modernizr-2.7.1.min.js', array(), '2.7.1'); // Modernizr
         wp_enqueue_script('modernizr'); // Enqueue it!
 
+
+  
+        wp_register_script('featherlight',  '//cdn.rawgit.com/noelboss/featherlight/1.3.5/release/featherlight.min.js', array(), '1.3.5', true); 
+        wp_enqueue_script('featherlight'); // Enqueue it!
+  
+        wp_register_script('featherlightgallery', '//cdn.rawgit.com/noelboss/featherlight/1.4.0/release/featherlight.gallery.min.js', array(), '1.4.0', true); 
+        wp_enqueue_script('featherlightgallery'); // Enqueue it!
+
+
+        wp_register_script('matchHeight',$tdu . '/js/jquery.matchHeight.js', array('jquery'), wf_version(), true); // Custom scripts
+        wp_enqueue_script('matchHeight'); // Enqueue it!
+
+        wp_register_script('bjqs',$tdu . '/js/bjqs-1.3.js', array('jquery'), wf_version(), true); // Custom scripts
+        wp_enqueue_script('bjqs'); // Enqueue it!
+
+        wp_register_script('bxslider',$tdu . '/js/jquery.bxslider.min.js', array('jquery'), wf_version(), true); // Custom scripts
+        wp_enqueue_script('bxslider'); // Enqueue it!
+
+
         wp_register_script('scripts',$tdu . '/js/scripts.js', array('jquery'), wf_version(), true); // Custom scripts
         wp_enqueue_script('scripts'); // Enqueue it!
     }
