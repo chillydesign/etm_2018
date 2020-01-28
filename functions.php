@@ -811,14 +811,17 @@ add_action( 'send_headers', 'send_frame_options_header', 10, 0 );
 
 
 function generate_social_links($url, $title) {
+
+    $encoded_title = urlencode($title);
+    $encoded_url = urlencode($url);
     $rand_id = 'social_links_' . rand(1000, 1000000)  ;
     $str = '<div class="social_link_container" id="'. $rand_id.'">';
     $str .= '<input type="hidden" class="input_for_copying" name="" >';
 
-    $str .= '<a title="Facebook" class="social_link" href="' . $url . '" target="_blank" ><i class="fa fa-facebook-f" aria-hidden="true"></i><span>Facebook</span></a>';
-    $str .= '<a title="Whatsapp" class="social_link" href="' . $url . '" target="_blank" ><i class="fa fa-whatsapp" aria-hidden="true"></i><span>Whatsapp</span></a>';
-    $str .= '<a title="Email" class="social_link" href="' . $url . '" target="_blank" ><i class="fa fa-envelope" aria-hidden="true"></i><span>Email</span></a>';
-    $str .= '<a title="Copy link" class="social_link" href="' . $url . '" target="_blank" ><i class="fa fa-copy" aria-hidden="true"></i><span>Copy link</span></a>';
+    $str .= '<a title="Facebook" class="social_link" href="https://www.facebook.com/sharer/sharer.php?u='. $encoded_url.'" target="_blank" ><i class="fa fa-facebook-f" aria-hidden="true"></i><span>Facebook</span></a>';
+    $str .= '<a title="Whatsapp" class="social_link" href="https://wa.me/?text='. $encoded_url .'" target="_blank" ><i class="fa fa-whatsapp" aria-hidden="true"></i><span>Whatsapp</span></a>';
+    $str .= '<a title="Email" class="social_link" href="mailto:?to=&body='. $encoded_title . ' : ' . $encoded_url .  '&subject=ETM" target="_blank" ><i class="fa fa-envelope" aria-hidden="true"></i><span>Email</span></a>';
+    $str .= '<a title="Copy link" class="social_link  copy_email_button" ><i class="fa fa-copy" aria-hidden="true"></i><span>Copy link</span></a>';
 
     $str .= '</div><!-- END OF SOCIAL_LINK_CONTAINER -->';
     echo $str;

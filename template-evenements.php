@@ -38,7 +38,7 @@
 								<section class="event">
 									<div class="wrapper">
 										<div class="row">
-											<div class="col-md-8 col-md-push-3">
+											<div class="col-md-7 col-md-push-3">
 												<?php $permalink = get_the_permalink(); ?>
 												<?php $title = get_the_title(); ?>
 												<h2><a href="<?php echo $permalink; ?>"><?php echo $title; ?></a></h2>
@@ -48,7 +48,7 @@
 
 												<?php generate_social_links($permalink, $title); ?>
 											</div>
-											<div class="col-md-3 col-md-pull-8" style="padding: 0px 60px 0 0;"><a href="<?php echo $permalink; ?>"><!-- <div style="width:100%; padding: 37%; background:url(<?php //echo $url;?>) no-repeat; background-size: cover; margin-bottom:20px; margin-top:6px;"></div> --><img src="<?php echo $url; ?>" <?php if(get_field('photo_circulaire')){?> style="border-radius:50%;" <?php } ?>></a></div>
+											<div class="col-md-3 col-md-pull-7" style="padding: 0px 60px 0 0;"><a href="<?php echo $permalink; ?>"><!-- <div style="width:100%; padding: 37%; background:url(<?php //echo $url;?>) no-repeat; background-size: cover; margin-bottom:20px; margin-top:6px;"></div> --><img src="<?php echo $url; ?>" <?php if(get_field('photo_circulaire')){?> style="border-radius:50%;" <?php } ?>></a></div>
 									 	
 										</div>
 									</div>
