@@ -552,6 +552,11 @@ a.social_link span {
 a.social_link:hover  {
   background: #ed9b06;
 }
+input.input_for_copying {
+  opacity: 0;
+  width: 1px; height: 1px;
+  
+}
 
   /*------------------------------------*\
   TYPOGRAPHY

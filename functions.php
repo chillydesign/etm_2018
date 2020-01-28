@@ -822,7 +822,7 @@ function generate_social_links($url, $title) {
     $str .= '<a title="Whatsapp" class="social_link social_link_whatsapp" href="whatsapp://send?text='. $encoded_url .'" data-action="share/whatsapp/share" target="_blank" ><i class="fa fa-whatsapp" aria-hidden="true"></i><span>Whatsapp</span></a>';
     $str .= '<a title="Email" class="social_link" href="mailto:%20?body='. $encoded_title . ' : ' . $encoded_url .  '&subject=ETM" target="_blank" ><i class="fa fa-envelope" aria-hidden="true"></i><span>Email</span></a>';
     $str .= '<a title="Copy link" class="social_link  copy_email_button" ><i class="fa fa-copy" aria-hidden="true"></i><span>Copy link</span></a>';
-    $str .= '<input type="hidden" class="input_for_copying" name="whatsapp_input" value="'. $encoded_url  .'" >';
+    $str .= '<input type="text" class="input_for_copying" name="whatsapp_input" value="'. $encoded_url  .'" >';
     $str .= '</div><!-- END OF SOCIAL_LINK_CONTAINER -->';
     echo $str;
 }
