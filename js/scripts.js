@@ -200,7 +200,7 @@
 		var $input = $parent.find('input');
 		$input.select();
 		document.execCommand("copy");
-		alert("Copied the text: " + $input.val());
+		$this.find('em').addClass('visible');
 	});
 
 
