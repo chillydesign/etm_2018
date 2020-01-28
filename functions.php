@@ -812,13 +812,13 @@ add_action( 'send_headers', 'send_frame_options_header', 10, 0 );
 
 function generate_social_links($url, $title) {
     $rand_id = 'social_links_' . rand(1000, 1000000)  ;
-    $str = '<div class="social_link_container"><input type="hidden" name="" >';
+    $str = '<div class="social_link_container" id="'. $rand_id.'">';
+    $str .= '<input type="hidden" class="input_for_copying" name="" >';
 
-
-    $str = '<a class="social_link" href="' . $url . '" target="_blank" ><i class="fa fa-facebook-f" aria-hidden="true"></i>'. $title.'</a>';
-    $str = '<aclass="social_link"  href="' . $url . '" target="_blank" ><i class="fa fa-whatsapp" aria-hidden="true"></i>'. $title.'</a>';
-    $str = '<a class="social_link" href="' . $url . '" target="_blank" ><i class="fa fa-envelope" aria-hidden="true"></i>'. $title.'</a>';
-    $str = '<a class="social_link" href="' . $url . '" target="_blank" ><i class="fa fa-copy" aria-hidden="true"></i>'. $title.'</a>';
+    $str .= '<a class="social_link" href="' . $url . '" target="_blank" ><i class="fa fa-facebook-f" aria-hidden="true"></i>'. $title.'</a>';
+    $str .= '<aclass="social_link"  href="' . $url . '" target="_blank" ><i class="fa fa-whatsapp" aria-hidden="true"></i>'. $title.'</a>';
+    $str .= '<a class="social_link" href="' . $url . '" target="_blank" ><i class="fa fa-envelope" aria-hidden="true"></i>'. $title.'</a>';
+    $str .= '<a class="social_link" href="' . $url . '" target="_blank" ><i class="fa fa-copy" aria-hidden="true"></i>'. $title.'</a>';
 
     $str .= '</div><!-- END OF SOCIAL_LINK_CONTAINER -->';
     echo $str;
