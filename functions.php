@@ -133,7 +133,7 @@ add_action('after_setup_theme', 'remove_json_api');
 
 function wf_version()
 {
-    return '0.0.1';
+    return '0.0.2';
 }
 
 
@@ -145,12 +145,11 @@ function html5blank_header_scripts()
 
         $tdu =  get_template_directory_uri();
 
-        wp_register_script('conditionizr', $tdu . '/js/lib/conditionizr-4.3.0.min.js', array(), '4.3.0'); // Conditionizr
-        wp_enqueue_script('conditionizr'); // Enqueue it!
+        // wp_register_script('conditionizr', $tdu . '/js/lib/conditionizr-4.3.0.min.js', array(), '4.3.0'); // Conditionizr
+        // wp_enqueue_script('conditionizr'); // Enqueue it!
 
         wp_register_script('modernizr', $tdu . '/js/lib/modernizr-2.7.1.min.js', array(), '2.7.1'); // Modernizr
         wp_enqueue_script('modernizr'); // Enqueue it!
-
 
   
         wp_register_script('featherlight',  '//cdn.rawgit.com/noelboss/featherlight/1.3.5/release/featherlight.min.js', array(), '1.3.5', true); 
@@ -417,8 +416,8 @@ function html5blankcomments($comment, $args, $depth)
 
 // Add Actions
 add_action('init', 'html5blank_header_scripts'); // Add Custom Scripts to wp_head
-add_action('wp_print_scripts', 'html5blank_conditional_scripts'); // Add Conditional Page Scripts
-add_action('get_header', 'enable_threaded_comments'); // Enable Threaded Comments
+// add_action('wp_print_scripts', 'html5blank_conditional_scripts'); // Add Conditional Page Scripts
+// add_action('get_header', 'enable_threaded_comments'); // Enable Threaded Comments
 add_action('wp_enqueue_scripts', 'html5blank_styles'); // Add Theme Stylesheet
 add_action('init', 'register_html5_menu'); // Add HTML5 Blank Menu
 add_action('init', 'create_post_type_actualite'); // Add our Actualite Custom Post Type
@@ -809,6 +808,36 @@ add_filter( 'protected_title_format', 'remove_private_title' );
 
 add_action( 'send_headers', 'send_frame_options_header', 10, 0 );
 
+
+
+function generate_social_links($url, $title) {
+    $rand_id = 'social_links_' . rand(1000, 1000000)  ;
+    $str = '<div class="social_link_container"><input type="hidden" name="" >';
+
+
+    $str = '<a class="social_link" href="' . $url . '" target="_blank" ><i class="fa fa-facebook-f" aria-hidden="true"></i>'. $title.'</a>';
+    $str = '<aclass="social_link"  href="' . $url . '" target="_blank" ><i class="fa fa-whatsapp" aria-hidden="true"></i>'. $title.'</a>';
+    $str = '<a class="social_link" href="' . $url . '" target="_blank" ><i class="fa fa-envelope" aria-hidden="true"></i>'. $title.'</a>';
+    $str = '<a class="social_link" href="' . $url . '" target="_blank" ><i class="fa fa-copy" aria-hidden="true"></i>'. $title.'</a>';
+
+    $str .= '</div><!-- END OF SOCIAL_LINK_CONTAINER -->';
+    echo $str;
+}
+
+
+
+
+// https://wa.me/?text=urlencodedtext
+// <a href="whatsapp://send?text=<<HERE GOES THE URL ENCODED TEXT YOU WANT TO SHARE>>" data-action="share/whatsapp/share">Share via Whatsapp</a>
+
+
+
+// function copyText() {
+//     var copyW3docsText = document.getElementById("W3docsInput");
+//     copyW3docsText.select();
+//     document.execCommand("copy");
+//     alert("Copied the text: " + copyW3docsText.value);
+//   } 
 
 
 ?>

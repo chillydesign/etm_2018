@@ -242,6 +242,7 @@ footer {background: black; color: white; padding: 30px 15px; font-size: 1.1em; l
 .facebook {background-image: url(img/facebook.svg); margin-right: 10px;}
 .instagram {background-image: url(img/instagram.svg); margin-right: 10px;}
 .cloud {background-image: url(img/cloud.svg);}
+.whatsapp {background-image: url(img/whatsapp.svg);}
 
 .footer-middle {padding: 20px 0; border-top: solid 2px white;  display: none; font-size: 0.8em;}
 footer ul, footer li, footer a, footer ul:hover, footer li:hover, footer a:hover {background: black !important;}
@@ -522,6 +523,21 @@ div#mylightbox { display: none; }
       max-width: 460px;
     }
   }
+
+
+.social_link_container {
+  padding: 20px ;
+  margin: 20px 0;
+  background: #f1f1f1;
+}
+a.social_link {
+  display:inline-block;
+  padding: 10px;
+}
+a.social_link i {
+  background: #ddd;
+}
+
 
   /*------------------------------------*\
   TYPOGRAPHY
