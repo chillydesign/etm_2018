@@ -133,7 +133,7 @@ add_action('after_setup_theme', 'remove_json_api');
 
 function wf_version()
 {
-    return '0.0.4';
+    return '0.0.5';
 }
 
 
@@ -816,13 +816,13 @@ function generate_social_links($url, $title) {
     $encoded_url = urlencode($url);
     $rand_id = 'social_links_' . rand(1000, 1000000)  ;
     $str = '<div class="social_link_container" id="'. $rand_id.'">';
-    $str .= '<input type="hidden" class="input_for_copying" name="" >';
+
 
     $str .= '<a title="Facebook" class="social_link" href="https://www.facebook.com/sharer/sharer.php?u='. $encoded_url.'" target="_blank" ><i class="fa fa-facebook-f" aria-hidden="true"></i><span>Facebook</span></a>';
-    $str .= '<a title="Whatsapp" class="social_link" href="https://wa.me/?text='. $encoded_url .'" target="_blank" ><i class="fa fa-whatsapp" aria-hidden="true"></i><span>Whatsapp</span></a>';
-    $str .= '<a title="Email" class="social_link" href="mailto:?to=&body='. $encoded_title . ' : ' . $encoded_url .  '&subject=ETM" target="_blank" ><i class="fa fa-envelope" aria-hidden="true"></i><span>Email</span></a>';
+    $str .= '<a title="Whatsapp" class="social_link social_link_whatsapp" href="whatsapp://send?text='. $encoded_url .'" data-action="share/whatsapp/share" target="_blank" ><i class="fa fa-whatsapp" aria-hidden="true"></i><span>Whatsapp</span></a>';
+    $str .= '<a title="Email" class="social_link" href="mailto:%20?body='. $encoded_title . ' : ' . $encoded_url .  '&subject=ETM" target="_blank" ><i class="fa fa-envelope" aria-hidden="true"></i><span>Email</span></a>';
     $str .= '<a title="Copy link" class="social_link  copy_email_button" ><i class="fa fa-copy" aria-hidden="true"></i><span>Copy link</span></a>';
-
+    $str .= '<input type="hidden" class="input_for_copying" name="" >';
     $str .= '</div><!-- END OF SOCIAL_LINK_CONTAINER -->';
     echo $str;
 }
@@ -831,16 +831,9 @@ function generate_social_links($url, $title) {
 
 
 // https://wa.me/?text=urlencodedtext
-// <a href="whatsapp://send?text=<<HERE GOES THE URL ENCODED TEXT YOU WANT TO SHARE>>" data-action="share/whatsapp/share">Share via Whatsapp</a>
+// <a href="whatsapp://send?text=<<HERE GOES THE URL ENCODED TEXT YOU WANT TO SHARE>>" >Share via Whatsapp</a>
 
 
-
-// function copyText() {
-//     var copyW3docsText = document.getElementById("W3docsInput");
-//     copyW3docsText.select();
-//     document.execCommand("copy");
-//     alert("Copied the text: " + copyW3docsText.value);
-//   } 
 
 
 ?>
