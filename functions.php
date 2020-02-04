@@ -828,8 +828,7 @@ function generate_social_links($url, $title) {
 
 function format_text_for_mailto_param($text) {
 
-    $text = str_replace("’", " ", $text);
-  
+    $text = str_replace("&rsquo;", "'", $text);
     $str = rawurlencode(htmlspecialchars_decode($text));
     return $str;
    
