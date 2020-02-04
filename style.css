@@ -1206,9 +1206,9 @@ a.social_link:hover {
 }
 
 input.input_for_copying {
-  opacity: 0.05;
-  width: 2px;
-  height: 2px;
+  opacity: 0.01;
+  width: 50px;
+  /* height: 2px; */
 
 }
 
