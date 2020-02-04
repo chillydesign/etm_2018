@@ -819,7 +819,7 @@ function generate_social_links($url, $title) {
 
     $str .= '<a title="Facebook" class="social_link" href="https://www.facebook.com/sharer/sharer.php?u='. $encoded_url.'" target="_blank" ><i class="fa fa-facebook-f" aria-hidden="true"></i><span>Facebook</span></a>';
     $str .= '<a title="Whatsapp" class="social_link social_link_whatsapp" href="whatsapp://send?text='. $encoded_url .'" data-action="share/whatsapp/share" target="_blank" ><i class="fa fa-whatsapp" aria-hidden="true"></i><span>Whatsapp</span></a>';
-    $str .= '<a title="Email" class="social_link" href="mailto:exemple@email.com?subject=ETM&body='. urlencode($title . ' - ' . $url)  .  '" target="_blank" ><i class="fa fa-envelope" aria-hidden="true"></i><span>Email</span></a>';
+    $str .= '<a title="Email" class="social_link" href="mailto:exemple@email.com?subject=ETM&body='. rawurlencode($title . ' - ' . $url)  .  '" target="_blank" ><i class="fa fa-envelope" aria-hidden="true"></i><span>Email</span></a>';
     $str .= '<a title="Copy link" class="social_link  copy_email_button" ><i class="fa fa-copy" aria-hidden="true"></i><span>Copy link</span><em>Le lien a été copié!</em></a>';
     $str .= '<input type="text" class="input_for_copying" name="whatsapp_input" value="'. $url  .'" >';
     $str .= '</div><!-- END OF SOCIAL_LINK_CONTAINER -->';
