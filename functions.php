@@ -827,12 +827,12 @@ function generate_social_links($url, $title) {
 }
 
 function format_text_for_mailto_param($text) {
-    return rawurlencode(htmlspecialchars_decode($text));
+
+    $text = str_replace("’", "'", $text);
+    $str = rawurlencode(htmlspecialchars_decode($text));
+    return $str;
+   
 }
-
-
-// https://wa.me/?text=urlencodedtext
-// <a href="whatsapp://send?text=<<HERE GOES THE URL ENCODED TEXT YOU WANT TO SHARE>>" >Share via Whatsapp</a>
 
 
 
