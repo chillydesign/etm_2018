@@ -42,7 +42,7 @@
 
 		<?php if ($video) : ?>
 			<div class="promotion_banner_video">
-				<video playsinline autoplay muted loop poster="<?php echo $image['sizes']['medium']; ?>" src="<?php echo $video; ?>"></video>
+				<video playsinline autoplay muted loop poster="<?php echo $image['sizes']['medium']; ?>" src="<?php echo $video['url']; ?>"></video>
 			</div>
 		<?php else : ?>
 			<div class="promotion_banner_image" style="background-image:url('<?php echo $image['url']; ?>'); background-position:<?php echo $bpos; ?>"></div>
