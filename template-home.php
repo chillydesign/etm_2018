@@ -41,9 +41,9 @@
 		</div>
 
 		<?php if ($video) : ?>
-			<div class="promotion_banner_video">
-				<video playsinline autoplay muted loop poster="<?php echo $image['sizes']['medium']; ?>" src="<?php echo $video['url']; ?>"></video>
-			</div>
+
+			<video class="promotion_banner_video" playsinline autoplay muted loop poster="<?php echo $image['sizes']['medium']; ?>" src="<?php echo $video['url']; ?>"></video>
+
 		<?php else : ?>
 			<div class="promotion_banner_image" style="background-image:url('<?php echo $image['url']; ?>'); background-position:<?php echo $bpos; ?>"></div>
 		<?php endif; ?>
