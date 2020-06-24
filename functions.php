@@ -15,13 +15,11 @@
 	Theme Support
 \*------------------------------------*/
 
-if (!isset($content_width))
-{
+if (!isset($content_width)) {
     $content_width = 900;
 }
 
-if (function_exists('add_theme_support'))
-{
+if (function_exists('add_theme_support')) {
     // Add Menu Support
     add_theme_support('menus');
 
@@ -65,26 +63,26 @@ if (function_exists('add_theme_support'))
 // HTML5 Blank navigation
 function html5blank_nav()
 {
-	wp_nav_menu(
-	array(
-		'theme_location'  => 'header-menu',
-		'menu'            => '',
-		'container'       => 'div',
-		'container_class' => 'menu-{menu slug}-container',
-		'container_id'    => '',
-		'menu_class'      => 'menu',
-		'menu_id'         => '',
-		'echo'            => true,
-		'fallback_cb'     => 'wp_page_menu',
-		'before'          => '',
-		'after'           => '',
-		'link_before'     => '',
-		'link_after'      => '',
-		'items_wrap'      => '<ul>%3$s</ul>',
-		'depth'           => 0,
-		'walker'          => ''
-		)
-	);
+    wp_nav_menu(
+        array(
+            'theme_location'  => 'header-menu',
+            'menu'            => '',
+            'container'       => 'div',
+            'container_class' => 'menu-{menu slug}-container',
+            'container_id'    => '',
+            'menu_class'      => 'menu',
+            'menu_id'         => '',
+            'echo'            => true,
+            'fallback_cb'     => 'wp_page_menu',
+            'before'          => '',
+            'after'           => '',
+            'link_before'     => '',
+            'link_after'      => '',
+            'items_wrap'      => '<ul>%3$s</ul>',
+            'depth'           => 0,
+            'walker'          => ''
+        )
+    );
 }
 
 
@@ -93,7 +91,7 @@ function html5blank_nav()
 function disable_wp_emojicons()
 {
 
-  // all actions related to emojis
+    // all actions related to emojis
     remove_action('admin_print_styles', 'print_emoji_styles');
     remove_action('wp_head', 'print_emoji_detection_script', 7);
     remove_action('admin_print_scripts', 'print_emoji_detection_script');
@@ -103,7 +101,7 @@ function disable_wp_emojicons()
     remove_filter('comment_text_rss', 'wp_staticize_emoji');
 
     // filter to remove TinyMCE emojis
-  // add_filter( 'tiny_mce_plugins', 'disable_emojicons_tinymce' );
+    // add_filter( 'tiny_mce_plugins', 'disable_emojicons_tinymce' );
 }
 add_action('init', 'disable_wp_emojicons');
 
@@ -125,7 +123,7 @@ function remove_json_api()
     // Remove oEmbed-specific JavaScript from the front-end and back-end.
     remove_action('wp_head', 'wp_oembed_add_host_js');
     // Remove all embeds rewrite rules.
-  // add_filter( 'rewrite_rules_array', 'disable_embeds_rewrites' );
+    // add_filter( 'rewrite_rules_array', 'disable_embeds_rewrites' );
 }
 add_action('after_setup_theme', 'remove_json_api');
 
@@ -133,7 +131,7 @@ add_action('after_setup_theme', 'remove_json_api');
 
 function wf_version()
 {
-    return '0.0.8';
+    return '0.1.0';
 }
 
 
@@ -151,25 +149,25 @@ function html5blank_header_scripts()
         wp_register_script('modernizr', $tdu . '/js/lib/modernizr-2.7.1.min.js', array(), '2.7.1'); // Modernizr
         wp_enqueue_script('modernizr'); // Enqueue it!
 
-  
-        wp_register_script('featherlight',  '//cdn.rawgit.com/noelboss/featherlight/1.3.5/release/featherlight.min.js', array(), '1.3.5', true); 
+
+        wp_register_script('featherlight',  '//cdn.rawgit.com/noelboss/featherlight/1.3.5/release/featherlight.min.js', array(), '1.3.5', true);
         wp_enqueue_script('featherlight'); // Enqueue it!
-  
-        wp_register_script('featherlightgallery', '//cdn.rawgit.com/noelboss/featherlight/1.4.0/release/featherlight.gallery.min.js', array(), '1.4.0', true); 
+
+        wp_register_script('featherlightgallery', '//cdn.rawgit.com/noelboss/featherlight/1.4.0/release/featherlight.gallery.min.js', array(), '1.4.0', true);
         wp_enqueue_script('featherlightgallery'); // Enqueue it!
 
 
-        wp_register_script('matchHeight',$tdu . '/js/jquery.matchHeight.js', array('jquery'), wf_version(), true); // Custom scripts
+        wp_register_script('matchHeight', $tdu . '/js/jquery.matchHeight.js', array('jquery'), wf_version(), true); // Custom scripts
         wp_enqueue_script('matchHeight'); // Enqueue it!
 
-        wp_register_script('bjqs',$tdu . '/js/bjqs-1.3.js', array('jquery'), wf_version(), true); // Custom scripts
+        wp_register_script('bjqs', $tdu . '/js/bjqs-1.3.js', array('jquery'), wf_version(), true); // Custom scripts
         wp_enqueue_script('bjqs'); // Enqueue it!
 
-        wp_register_script('bxslider',$tdu . '/js/jquery.bxslider.min.js', array('jquery'), wf_version(), true); // Custom scripts
+        wp_register_script('bxslider', $tdu . '/js/jquery.bxslider.min.js', array('jquery'), wf_version(), true); // Custom scripts
         wp_enqueue_script('bxslider'); // Enqueue it!
 
 
-        wp_register_script('scripts',$tdu . '/js/scripts.js', array('jquery'), wf_version(), true); // Custom scripts
+        wp_register_script('scripts', $tdu . '/js/scripts.js', array('jquery'), wf_version(), true); // Custom scripts
         wp_enqueue_script('scripts'); // Enqueue it!
     }
 }
@@ -243,8 +241,7 @@ function add_slug_to_body_class($classes)
 }
 
 // If Dynamic Sidebar Exists
-if (function_exists('register_sidebar'))
-{
+if (function_exists('register_sidebar')) {
     // Define Sidebar Widget Area 1
     register_sidebar(array(
         'name' => __('Widget Area 1', 'html5blank'),
@@ -342,14 +339,14 @@ function html5_style_remove($tag)
 }
 
 // Remove thumbnail width and height dimensions that prevent fluid images in the_thumbnail
-function remove_thumbnail_dimensions( $html )
+function remove_thumbnail_dimensions($html)
 {
     $html = preg_replace('/(width|height)=\"\d*\"\s/', "", $html);
     return $html;
 }
 
 // Custom Gravatar in Settings > Discussion
-function html5blankgravatar ($avatar_defaults)
+function html5blankgravatar($avatar_defaults)
 {
     $myavatar = get_template_directory_uri() . '/img/gravatar.jpg';
     $avatar_defaults[$myavatar] = "Custom Gravatar";
@@ -360,7 +357,7 @@ function html5blankgravatar ($avatar_defaults)
 function enable_threaded_comments()
 {
     if (!is_admin()) {
-        if (is_singular() AND comments_open() AND (get_option('thread_comments') == 1)) {
+        if (is_singular() and comments_open() and (get_option('thread_comments') == 1)) {
             wp_enqueue_script('comment-reply');
         }
     }
@@ -369,46 +366,46 @@ function enable_threaded_comments()
 // Custom Comments Callback
 function html5blankcomments($comment, $args, $depth)
 {
-	$GLOBALS['comment'] = $comment;
-	extract($args, EXTR_SKIP);
+    $GLOBALS['comment'] = $comment;
+    extract($args, EXTR_SKIP);
 
-	if ( 'div' == $args['style'] ) {
-		$tag = 'div';
-		$add_below = 'comment';
-	} else {
-		$tag = 'li';
-		$add_below = 'div-comment';
-	}
+    if ('div' == $args['style']) {
+        $tag = 'div';
+        $add_below = 'comment';
+    } else {
+        $tag = 'li';
+        $add_below = 'div-comment';
+    }
 ?>
     <!-- heads up: starting < for the html tag (li or div) in the next line: -->
-    <<?php echo $tag ?> <?php comment_class(empty( $args['has_children'] ) ? '' : 'parent') ?> id="comment-<?php comment_ID() ?>">
-	<?php if ( 'div' != $args['style'] ) : ?>
-	<div id="div-comment-<?php comment_ID() ?>" class="comment-body">
-	<?php endif; ?>
-	<div class="comment-author vcard">
-	<?php if ($args['avatar_size'] != 0) echo get_avatar( $comment, $args['180'] ); ?>
-	<?php printf(__('<cite class="fn">%s</cite> <span class="says">says:</span>'), get_comment_author_link()) ?>
-	</div>
-<?php if ($comment->comment_approved == '0') : ?>
-	<em class="comment-awaiting-moderation"><?php _e('Your comment is awaiting moderation.') ?></em>
-	<br />
-<?php endif; ?>
+    <<?php echo $tag ?> <?php comment_class(empty($args['has_children']) ? '' : 'parent') ?> id="comment-<?php comment_ID() ?>">
+        <?php if ('div' != $args['style']) : ?>
+            <div id="div-comment-<?php comment_ID() ?>" class="comment-body">
+            <?php endif; ?>
+            <div class="comment-author vcard">
+                <?php if ($args['avatar_size'] != 0) echo get_avatar($comment, $args['180']); ?>
+                <?php printf(__('<cite class="fn">%s</cite> <span class="says">says:</span>'), get_comment_author_link()) ?>
+            </div>
+            <?php if ($comment->comment_approved == '0') : ?>
+                <em class="comment-awaiting-moderation"><?php _e('Your comment is awaiting moderation.') ?></em>
+                <br />
+            <?php endif; ?>
 
-	<div class="comment-meta commentmetadata"><a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>">
-		<?php
-			printf( __('%1$s at %2$s'), get_comment_date(),  get_comment_time()) ?></a><?php edit_comment_link(__('(Edit)'),'  ','' );
-		?>
-	</div>
+            <div class="comment-meta commentmetadata"><a href="<?php echo htmlspecialchars(get_comment_link($comment->comment_ID)) ?>">
+                    <?php
+                    printf(__('%1$s at %2$s'), get_comment_date(),  get_comment_time()) ?></a><?php edit_comment_link(__('(Edit)'), '  ', '');
+                                                                                        ?>
+            </div>
 
-	<?php comment_text() ?>
+            <?php comment_text() ?>
 
-	<div class="reply">
-	<?php comment_reply_link(array_merge( $args, array('add_below' => $add_below, 'depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
-	</div>
-	<?php if ( 'div' != $args['style'] ) : ?>
-	</div>
-	<?php endif; ?>
-<?php }
+            <div class="reply">
+                <?php comment_reply_link(array_merge($args, array('add_below' => $add_below, 'depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
+            </div>
+            <?php if ('div' != $args['style']) : ?>
+            </div>
+        <?php endif; ?>
+    <?php }
 
 /*------------------------------------*\
 	Actions + Filters + ShortCodes
@@ -480,179 +477,179 @@ function create_post_type_actualite()
 {
     register_taxonomy_for_object_type('category', 'actualite'); // Register Taxonomies for Category
     register_taxonomy_for_object_type('post_tag', 'actualite');
-    register_post_type('actualite', // Register Custom Post Type
+    register_post_type(
+        'actualite', // Register Custom Post Type
         array(
-        'labels' => array(
-            'name' => __('Actualité', 'actualite'), // Rename these to suit
-            'singular_name' => __('Actualité', 'actualite'),
-            'add_new' => __('Ajouter', 'actualite'),
-            'add_new_item' => __('Nouvelle Actualité', 'actualite'),
-            'edit' => __('Modifier', 'actualite'),
-            'edit_item' => __('Modifier Actualité', 'actualite'),
-            'new_item' => __('Ajouter Actualité', 'actualite'),
-            'view' => __('Afficher Actualité', 'actualite'),
-            'view_item' => __('Afficher Actualité', 'actualite'),
-            'search_items' => __('Rechercher Actualité', 'actualite'),
-            'not_found' => __('Aucune actualité trouvée', 'actualite'),
-            'not_found_in_trash' => __('Aucune actualité trouvée dans la corbeille', 'actualite')
-        ),
-        'public' => true,
-        'hierarchical' => true, // Allows your posts to behave like Hierarchy Pages
-        'has_archive' => true,
-        'supports' => array(
-            'title',
-            'editor',
-            'excerpt',
-            'thumbnail'
-        ), // Go to Dashboard Custom HTML5 Blank post for supports
-        'can_export' => true, // Allows export in Tools > Export
-        'taxonomies' => array(
-
-        ) // Add Category and Post Tags support
-    ));
+            'labels' => array(
+                'name' => __('Actualité', 'actualite'), // Rename these to suit
+                'singular_name' => __('Actualité', 'actualite'),
+                'add_new' => __('Ajouter', 'actualite'),
+                'add_new_item' => __('Nouvelle Actualité', 'actualite'),
+                'edit' => __('Modifier', 'actualite'),
+                'edit_item' => __('Modifier Actualité', 'actualite'),
+                'new_item' => __('Ajouter Actualité', 'actualite'),
+                'view' => __('Afficher Actualité', 'actualite'),
+                'view_item' => __('Afficher Actualité', 'actualite'),
+                'search_items' => __('Rechercher Actualité', 'actualite'),
+                'not_found' => __('Aucune actualité trouvée', 'actualite'),
+                'not_found_in_trash' => __('Aucune actualité trouvée dans la corbeille', 'actualite')
+            ),
+            'public' => true,
+            'hierarchical' => true, // Allows your posts to behave like Hierarchy Pages
+            'has_archive' => true,
+            'supports' => array(
+                'title',
+                'editor',
+                'excerpt',
+                'thumbnail'
+            ), // Go to Dashboard Custom HTML5 Blank post for supports
+            'can_export' => true, // Allows export in Tools > Export
+            'taxonomies' => array() // Add Category and Post Tags support
+        )
+    );
 }
 
 function create_post_type_cours()
 {
     register_taxonomy_for_object_type('category', 'cours'); // Register Taxonomies for Category
     register_taxonomy_for_object_type('post_tag', 'cours');
-    register_post_type('cours', // Register Custom Post Type
+    register_post_type(
+        'cours', // Register Custom Post Type
         array(
-        'labels' => array(
-            'name' => __('Cours', 'cours'), // Rename these to suit
-            'singular_name' => __('Cours', 'cours'),
-            'add_new' => __('Ajouter', 'cours'),
-            'add_new_item' => __('Nouveau Cours', 'cours'),
-            'edit' => __('Modifier', 'cours'),
-            'edit_item' => __('Modifier Cours', 'cours'),
-            'new_item' => __('Ajouter Cours', 'cours'),
-            'view' => __('Afficher Cours', 'cours'),
-            'view_item' => __('Afficher Cours', 'cours'),
-            'search_items' => __('Rechercher Cours', 'cours'),
-            'not_found' => __('Aucun cours trouvé', 'cours'),
-            'not_found_in_trash' => __('Aucun cours trouvé dans la corbeille', 'cours')
-        ),
-        'public' => true,
-        'hierarchical' => true, // Allows your posts to behave like Hierarchy Pages
-        'has_archive' => true,
-        'supports' => array(
-            'title',
-            'editor',
-            'excerpt',
-            'thumbnail'
-        ), // Go to Dashboard Custom HTML5 Blank post for supports
-        'can_export' => true, // Allows export in Tools > Export
-        'taxonomies' => array(
-
-        ) // Add Category and Post Tags support
-    ));
+            'labels' => array(
+                'name' => __('Cours', 'cours'), // Rename these to suit
+                'singular_name' => __('Cours', 'cours'),
+                'add_new' => __('Ajouter', 'cours'),
+                'add_new_item' => __('Nouveau Cours', 'cours'),
+                'edit' => __('Modifier', 'cours'),
+                'edit_item' => __('Modifier Cours', 'cours'),
+                'new_item' => __('Ajouter Cours', 'cours'),
+                'view' => __('Afficher Cours', 'cours'),
+                'view_item' => __('Afficher Cours', 'cours'),
+                'search_items' => __('Rechercher Cours', 'cours'),
+                'not_found' => __('Aucun cours trouvé', 'cours'),
+                'not_found_in_trash' => __('Aucun cours trouvé dans la corbeille', 'cours')
+            ),
+            'public' => true,
+            'hierarchical' => true, // Allows your posts to behave like Hierarchy Pages
+            'has_archive' => true,
+            'supports' => array(
+                'title',
+                'editor',
+                'excerpt',
+                'thumbnail'
+            ), // Go to Dashboard Custom HTML5 Blank post for supports
+            'can_export' => true, // Allows export in Tools > Export
+            'taxonomies' => array() // Add Category and Post Tags support
+        )
+    );
 }
 function create_post_type_atelier()
 {
     register_taxonomy_for_object_type('category', 'atelier'); // Register Taxonomies for Category
     register_taxonomy_for_object_type('post_tag', 'atelier');
-    register_post_type('atelier', // Register Custom Post Type
+    register_post_type(
+        'atelier', // Register Custom Post Type
         array(
-        'labels' => array(
-            'name' => __('Atelier', 'atelier'), // Rename these to suit
-            'singular_name' => __('Atelier', 'atelier'),
-            'add_new' => __('Ajouter', 'atelier'),
-            'add_new_item' => __('Nouveau Atelier', 'atelier'),
-            'edit' => __('Modifier', 'atelier'),
-            'edit_item' => __('Modifier Atelier', 'atelier'),
-            'new_item' => __('Ajouter Atelier', 'atelier'),
-            'view' => __('Afficher Atelier', 'atelier'),
-            'view_item' => __('Afficher Atelier', 'atelier'),
-            'search_items' => __('Rechercher Atelier', 'atelier'),
-            'not_found' => __('Aucun atelier trouvé', 'atelier'),
-            'not_found_in_trash' => __('Aucun atelier trouvé dans la corbeille', 'atelier')
-        ),
-        'public' => true,
-        'hierarchical' => true, // Allows your posts to behave like Hierarchy Pages
-        'has_archive' => true,
-        'supports' => array(
-            'title',
-            'editor',
-            'excerpt',
-            'thumbnail'
-        ), // Go to Dashboard Custom HTML5 Blank post for supports
-        'can_export' => true, // Allows export in Tools > Export
-        'taxonomies' => array(
-
-        ) // Add Category and Post Tags support
-    ));
+            'labels' => array(
+                'name' => __('Atelier', 'atelier'), // Rename these to suit
+                'singular_name' => __('Atelier', 'atelier'),
+                'add_new' => __('Ajouter', 'atelier'),
+                'add_new_item' => __('Nouveau Atelier', 'atelier'),
+                'edit' => __('Modifier', 'atelier'),
+                'edit_item' => __('Modifier Atelier', 'atelier'),
+                'new_item' => __('Ajouter Atelier', 'atelier'),
+                'view' => __('Afficher Atelier', 'atelier'),
+                'view_item' => __('Afficher Atelier', 'atelier'),
+                'search_items' => __('Rechercher Atelier', 'atelier'),
+                'not_found' => __('Aucun atelier trouvé', 'atelier'),
+                'not_found_in_trash' => __('Aucun atelier trouvé dans la corbeille', 'atelier')
+            ),
+            'public' => true,
+            'hierarchical' => true, // Allows your posts to behave like Hierarchy Pages
+            'has_archive' => true,
+            'supports' => array(
+                'title',
+                'editor',
+                'excerpt',
+                'thumbnail'
+            ), // Go to Dashboard Custom HTML5 Blank post for supports
+            'can_export' => true, // Allows export in Tools > Export
+            'taxonomies' => array() // Add Category and Post Tags support
+        )
+    );
 }
 
 function create_post_type_enseignant()
 {
     register_taxonomy_for_object_type('category', 'enseignant'); // Register Taxonomies for Category
     register_taxonomy_for_object_type('post_tag', 'enseignant');
-    register_post_type('enseignant', // Register Custom Post Type
+    register_post_type(
+        'enseignant', // Register Custom Post Type
         array(
-        'labels' => array(
-            'name' => __('Enseignant', 'enseignant'), // Rename these to suit
-            'singular_name' => __('Enseignant', 'enseignant'),
-            'add_new' => __('Ajouter', 'enseignant'),
-            'add_new_item' => __('Nouvel Enseignant', 'enseignant'),
-            'edit' => __('Modifier', 'enseignant'),
-            'edit_item' => __('Modifier Enseignant', 'enseignant'),
-            'new_item' => __('Ajouter Enseignant', 'enseignant'),
-            'view' => __('Afficher Enseignant', 'enseignant'),
-            'view_item' => __('Afficher Enseignant', 'enseignant'),
-            'search_items' => __('Rechercher Enseignant', 'enseignant'),
-            'not_found' => __('Aucun enseignant trouvé', 'enseignant'),
-            'not_found_in_trash' => __('Aucun enseignant trouvé dans la corbeille', 'enseignant')
-        ),
-        'public' => true,
-        'hierarchical' => true, // Allows your posts to behave like Hierarchy Pages
-        'has_archive' => true,
-        'supports' => array(
-            'title',
-            'editor',
-            'excerpt',
-            'thumbnail'
-        ), // Go to Dashboard Custom HTML5 Blank post for supports
-        'can_export' => true, // Allows export in Tools > Export
-        'taxonomies' => array(
-
-        ) // Add Category and Post Tags support
-    ));
+            'labels' => array(
+                'name' => __('Enseignant', 'enseignant'), // Rename these to suit
+                'singular_name' => __('Enseignant', 'enseignant'),
+                'add_new' => __('Ajouter', 'enseignant'),
+                'add_new_item' => __('Nouvel Enseignant', 'enseignant'),
+                'edit' => __('Modifier', 'enseignant'),
+                'edit_item' => __('Modifier Enseignant', 'enseignant'),
+                'new_item' => __('Ajouter Enseignant', 'enseignant'),
+                'view' => __('Afficher Enseignant', 'enseignant'),
+                'view_item' => __('Afficher Enseignant', 'enseignant'),
+                'search_items' => __('Rechercher Enseignant', 'enseignant'),
+                'not_found' => __('Aucun enseignant trouvé', 'enseignant'),
+                'not_found_in_trash' => __('Aucun enseignant trouvé dans la corbeille', 'enseignant')
+            ),
+            'public' => true,
+            'hierarchical' => true, // Allows your posts to behave like Hierarchy Pages
+            'has_archive' => true,
+            'supports' => array(
+                'title',
+                'editor',
+                'excerpt',
+                'thumbnail'
+            ), // Go to Dashboard Custom HTML5 Blank post for supports
+            'can_export' => true, // Allows export in Tools > Export
+            'taxonomies' => array() // Add Category and Post Tags support
+        )
+    );
 }
 
 function create_post_type_eleve()
 {
     register_taxonomy_for_object_type('category', 'eleve'); // Register Taxonomies for Category
     register_taxonomy_for_object_type('post_tag', 'eleve');
-    register_post_type('eleve', // Register Custom Post Type
+    register_post_type(
+        'eleve', // Register Custom Post Type
         array(
-        'labels' => array(
-            'name' => __('Élève', 'eleve'), // Rename these to suit
-            'singular_name' => __('Élève', 'eleve'),
-            'add_new' => __('Ajouter', 'eleve'),
-            'add_new_item' => __('Nouvel Élève', 'eleve'),
-            'edit' => __('Modifier', 'eleve'),
-            'edit_item' => __('Modifier Élève', 'eleve'),
-            'new_item' => __('Ajouter Élève', 'eleve'),
-            'view' => __('Afficher Élève', 'eleve'),
-            'view_item' => __('Afficher Élève', 'eleve'),
-            'search_items' => __('Rechercher Élève', 'eleve'),
-            'not_found' => __('Aucun élève trouvé', 'eleve'),
-            'not_found_in_trash' => __('Aucun élève trouvé dans la corbeille', 'eleve')
-        ),
-        'public' => true,
-        'hierarchical' => true, // Allows your posts to behave like Hierarchy Pages
-        'has_archive' => false,
-        'supports' => array(
-            'title',
-            'editor',
-            'excerpt',
-            'thumbnail'
-        ), // Go to Dashboard Custom HTML5 Blank post for supports
-        'can_export' => true, // Allows export in Tools > Export
-        'taxonomies' => array(
-
-        ) // Add Category and Post Tags support
-    ));
+            'labels' => array(
+                'name' => __('Élève', 'eleve'), // Rename these to suit
+                'singular_name' => __('Élève', 'eleve'),
+                'add_new' => __('Ajouter', 'eleve'),
+                'add_new_item' => __('Nouvel Élève', 'eleve'),
+                'edit' => __('Modifier', 'eleve'),
+                'edit_item' => __('Modifier Élève', 'eleve'),
+                'new_item' => __('Ajouter Élève', 'eleve'),
+                'view' => __('Afficher Élève', 'eleve'),
+                'view_item' => __('Afficher Élève', 'eleve'),
+                'search_items' => __('Rechercher Élève', 'eleve'),
+                'not_found' => __('Aucun élève trouvé', 'eleve'),
+                'not_found_in_trash' => __('Aucun élève trouvé dans la corbeille', 'eleve')
+            ),
+            'public' => true,
+            'hierarchical' => true, // Allows your posts to behave like Hierarchy Pages
+            'has_archive' => false,
+            'supports' => array(
+                'title',
+                'editor',
+                'excerpt',
+                'thumbnail'
+            ), // Go to Dashboard Custom HTML5 Blank post for supports
+            'can_export' => true, // Allows export in Tools > Export
+            'taxonomies' => array() // Add Category and Post Tags support
+        )
+    );
 }
 
 
@@ -660,79 +657,83 @@ function create_post_type_video()
 {
     register_taxonomy_for_object_type('category', 'video'); // Register Taxonomies for Category
     register_taxonomy_for_object_type('post_tag', 'video');
-    register_post_type('video', // Register Custom Post Type
+    register_post_type(
+        'video', // Register Custom Post Type
         array(
-        'labels' => array(
-            'name' => __('Video', 'video'), // Rename these to suit
-            'singular_name' => __('Video', 'video'),
-            'add_new' => __('Ajouter', 'video'),
-            'add_new_item' => __('Nouvelle Video', 'video'),
-            'edit' => __('Modifier', 'video'),
-            'edit_item' => __('Modifier Video', 'video'),
-            'new_item' => __('Ajouter Video', 'video'),
-            'view' => __('Afficher Video', 'video'),
-            'view_item' => __('Afficher Video', 'video'),
-            'search_items' => __('Rechercher Video', 'video'),
-            'not_found' => __('Aucun video trouvée', 'video'),
-            'not_found_in_trash' => __('Aucun video trouvée dans la corbeille', 'video')
-        ),
-        'public' => true,
-        'hierarchical' => true, // Allows your posts to behave like Hierarchy Pages
-        'has_archive' => true,
-        'supports' => array(
-            'title',
-            'editor',
-            'excerpt',
-            'thumbnail'
-        ), // Go to Dashboard Custom HTML5 Blank post for supports
-        'can_export' => true, // Allows export in Tools > Export
-        'taxonomies' => array(
-        ) // Add Category and Post Tags support
-    ));
+            'labels' => array(
+                'name' => __('Video', 'video'), // Rename these to suit
+                'singular_name' => __('Video', 'video'),
+                'add_new' => __('Ajouter', 'video'),
+                'add_new_item' => __('Nouvelle Video', 'video'),
+                'edit' => __('Modifier', 'video'),
+                'edit_item' => __('Modifier Video', 'video'),
+                'new_item' => __('Ajouter Video', 'video'),
+                'view' => __('Afficher Video', 'video'),
+                'view_item' => __('Afficher Video', 'video'),
+                'search_items' => __('Rechercher Video', 'video'),
+                'not_found' => __('Aucun video trouvée', 'video'),
+                'not_found_in_trash' => __('Aucun video trouvée dans la corbeille', 'video')
+            ),
+            'public' => true,
+            'hierarchical' => true, // Allows your posts to behave like Hierarchy Pages
+            'has_archive' => true,
+            'supports' => array(
+                'title',
+                'editor',
+                'excerpt',
+                'thumbnail'
+            ), // Go to Dashboard Custom HTML5 Blank post for supports
+            'can_export' => true, // Allows export in Tools > Export
+            'taxonomies' => array() // Add Category and Post Tags support
+        )
+    );
 }
 
 
 // CHANGE EXCERPT LENGTH FOR DIFFERENT POST TYPES
 
-    function isacustom_excerpt_length($length) {
+function isacustom_excerpt_length($length)
+{
     global $post;
     if ($post->post_type == 'post')
-    return 32;
+        return 32;
     else if ($post->post_type == 'actualite')
-    return 45;
+        return 45;
     else if ($post->post_type == 'testimonial')
-    return 75;
+        return 75;
     else
-    return 80;
-    }
-    add_filter('excerpt_length', 'isacustom_excerpt_length');
+        return 80;
+}
+add_filter('excerpt_length', 'isacustom_excerpt_length');
 
 
 /*------------------------------------*\
 	ShortCode Functions
 \*------------------------------------*/
-add_filter( 'acf/fields/wysiwyg/toolbars', 'continuums_wysiwyg_acf' );
+add_filter('acf/fields/wysiwyg/toolbars', 'continuums_wysiwyg_acf');
 
-function continuums_wysiwyg_acf( $editeur_acf ) {
-  array_push($editeur_acf['Full'][1], 'subscript');
-  array_push($editeur_acf['Full'][1], 'superscript');
+function continuums_wysiwyg_acf($editeur_acf)
+{
+    array_push($editeur_acf['Full'][1], 'subscript');
+    array_push($editeur_acf['Full'][1], 'superscript');
 
 
-  return $editeur_acf;
+    return $editeur_acf;
 }
 
 
 
 
 
-function chilly_map( $atts, $content = null ) {
+function chilly_map($atts, $content = null)
+{
 
-    $attributes = shortcode_atts( array(
+    $attributes = shortcode_atts(array(
         'location' => "Chemin de Pra 1993, Veysonnaz, Suisse"
-    ), $atts );
+    ), $atts);
 
-	$g_key = 'AIzaSyAf2lNJES3d9R2xK4YfZrcDfR4c6wKCXx0';
-    $chilly_map = '<div id="mapcontainer"></div><script type="text/javascript" src="https://maps.google.com/maps/api/js?sensor=false&key='. $g_key .'"></script>';
+    $g_key = 'AIzaSyAf2lNJES3d9R2xK4YfZrcDfR4c6wKCXx0';
+    $chilly_map = '<div id="mapcontainer"></div><script type="text/javascript" src="https://maps.google.com/maps/api/js?sensor=false&key=' . $g_key . '"></script>';
 
     $chilly_map .= "<script>
        var mapcontainer = jQuery('#mapcontainer');
@@ -779,10 +780,8 @@ function chilly_map( $atts, $content = null ) {
 
 
     return $chilly_map;
-
-
 }
-add_shortcode( 'chilly_map', 'chilly_map' );
+add_shortcode('chilly_map', 'chilly_map');
 
 // Shortcode Demo with Nested Capability
 function html5_shortcode_demo($atts, $content = null)
@@ -797,44 +796,46 @@ function html5_shortcode_demo_2($atts, $content = null) // Demo Heading H2 short
 }
 
 
-function remove_private_title( $title ) {
+function remove_private_title($title)
+{
     // Return only the title portion as defined by %s,
     // not the additional
     // 'Private: ' as added in core
     return "%s";
 }
-add_filter( 'protected_title_format', 'remove_private_title' );
+add_filter('protected_title_format', 'remove_private_title');
 
 
-add_action( 'send_headers', 'send_frame_options_header', 10, 0 );
+add_action('send_headers', 'send_frame_options_header', 10, 0);
 
 
 
-function generate_social_links($url, $title) {
+function generate_social_links($url, $title)
+{
 
-   
+
     $encoded_url = urlencode($url);
-    $rand_id = 'social_links_' . rand(1000, 1000000)  ;
-    $str = '<div class="social_link_container" id="'. $rand_id.'">';
+    $rand_id = 'social_links_' . rand(1000, 1000000);
+    $str = '<div class="social_link_container" id="' . $rand_id . '">';
 
-    $str .= '<a title="Facebook" class="social_link" href="https://www.facebook.com/sharer/sharer.php?u='. $encoded_url.'" target="_blank" ><i class="fa fa-facebook-f" aria-hidden="true"></i><span>Facebook</span></a>';
-    $str .= '<a title="Whatsapp" class="social_link social_link_whatsapp" href="whatsapp://send?text='. $encoded_url .'" data-action="share/whatsapp/share" target="_blank" ><i class="fa fa-whatsapp" aria-hidden="true"></i><span>Whatsapp</span></a>';
-    $str .= '<a title="Email" class="social_link" href="mailto:%20?subject=ETM&body='. format_text_for_mailto_param($title . ' - ' . $url)  .  '" target="_blank" ><i class="fa fa-envelope" aria-hidden="true"></i><span>Email</span></a>';
+    $str .= '<a title="Facebook" class="social_link" href="https://www.facebook.com/sharer/sharer.php?u=' . $encoded_url . '" target="_blank" ><i class="fa fa-facebook-f" aria-hidden="true"></i><span>Facebook</span></a>';
+    $str .= '<a title="Whatsapp" class="social_link social_link_whatsapp" href="whatsapp://send?text=' . $encoded_url . '" data-action="share/whatsapp/share" target="_blank" ><i class="fa fa-whatsapp" aria-hidden="true"></i><span>Whatsapp</span></a>';
+    $str .= '<a title="Email" class="social_link" href="mailto:%20?subject=ETM&body=' . format_text_for_mailto_param($title . ' - ' . $url)  .  '" target="_blank" ><i class="fa fa-envelope" aria-hidden="true"></i><span>Email</span></a>';
     $str .= '<a title="Copy link" class="social_link  copy_email_button" ><i class="fa fa-copy" aria-hidden="true"></i><span>Copy link</span><em>Le lien a été copié!</em></a>';
-    $str .= '<input type="text" class="input_for_copying" name="whatsapp_input" value="'. $url  .'" >';
+    $str .= '<input type="text" class="input_for_copying" name="whatsapp_input" value="' . $url  . '" >';
     $str .= '</div><!-- END OF SOCIAL_LINK_CONTAINER -->';
     echo $str;
 }
 
-function format_text_for_mailto_param($text) {
+function format_text_for_mailto_param($text)
+{
 
     $text = str_replace("&rsquo;", "'", $text);
     $str = rawurlencode(htmlspecialchars_decode($text));
     return $str;
-   
 }
 
 
 
 
-?>
+    ?>
