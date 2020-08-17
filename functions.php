@@ -810,20 +810,25 @@ add_filter('protected_title_format', 'remove_private_title');
 
 add_action('send_headers', 'send_frame_options_header', 10, 0);
 
-
+// _e( '', 'html5blank' );
+// __( '', 'html5blank' );
 
 function generate_social_links($url, $title)
 {
 
+
+
+    $copylink = __('Copy link', 'webfactor');
+    $linkcopied = __('Le lien a été copié!', 'webfactor');
 
     $encoded_url = urlencode($url);
     $rand_id = 'social_links_' . rand(1000, 1000000);
     $str = '<div class="social_link_container" id="' . $rand_id . '">';
 
     $str .= '<a title="Facebook" class="social_link" href="https://www.facebook.com/sharer/sharer.php?u=' . $encoded_url . '" target="_blank" ><i class="fa fa-facebook-f" aria-hidden="true"></i><span>Facebook</span></a>';
-    $str .= '<a title="Whatsapp" class="social_link social_link_whatsapp" href="whatsapp://send?text=' . $encoded_url . '" data-action="share/whatsapp/share" target="_blank" ><i class="fa fa-whatsapp" aria-hidden="true"></i><span>Whatsapp</span></a>';
+    $str .= '<a title="Whatsapp" class="social_link social_link_whatsapp" href="whatsapp://send?text=' . $encoded_url . '" data-acti1on="share/whatsapp/share" target="_blank" ><i class="fa fa-whatsapp" aria-hidden="true"></i><span>Whatsapp</span></a>';
     $str .= '<a title="Email" class="social_link" href="mailto:%20?subject=ETM&body=' . format_text_for_mailto_param($title . ' - ' . $url)  .  '" target="_blank" ><i class="fa fa-envelope" aria-hidden="true"></i><span>Email</span></a>';
-    $str .= '<a title="Copy link" class="social_link  copy_email_button" ><i class="fa fa-copy" aria-hidden="true"></i><span>Copy link</span><em>Le lien a été copié!</em></a>';
+    $str .= '<a title="' . $copylink . '" class="social_link  copy_email_button" ><i class="fa fa-copy" aria-hidden="true"></i><span>' . $copylink . '</span><em>' . $linkcopied . '</em></a>';
     $str .= '<input type="text" class="input_for_copying" name="whatsapp_input" value="' . $url  . '" >';
     $str .= '</div><!-- END OF SOCIAL_LINK_CONTAINER -->';
     echo $str;

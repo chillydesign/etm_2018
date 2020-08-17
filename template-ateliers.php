@@ -25,7 +25,7 @@
 							<div class="row atelier">
 								<div class="col-sm-6" style="padding-right : 30px;">
 									<h3><?php if (get_sub_field('new')) {
-											echo '<strong>New</strong> - ';
+											echo '<strong>' .  __('New', 'webfactor') . '</strong> - ';
 										} ?><?php the_sub_field('title'); ?></h3>
 									<?php the_sub_field('description'); ?>
 								</div>

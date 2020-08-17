@@ -3,11 +3,11 @@
       <div class="nnwrapper" style="padding:0 15px;">
         <!-- logo -->
 
-          <a class="logo" href="<?php echo home_url(); ?>">
-            <div >
-            ETM - Ecole des Musiques Actuelles
-            </div>
-          </a>
+        <a class="logo" href="<?php echo home_url(); ?>">
+          <div>
+            ETM - <?php _e('Ecole des Musiques Actuelles', 'webfactor'); ?>
+          </div>
+        </a>
 
         <!-- /logo -->
 
@@ -16,12 +16,12 @@
         <div class="clear"></div>
       </div>
 
-        <!-- nav -->
-        <nav class="nav" role="navigation">
+      <!-- nav -->
+      <nav class="nav" role="navigation">
 
-          <div class="cdwrapper"><a href="#" id="mobile_nav_button">Menu</a><?php html5blank_nav(); ?></div>
-        </nav>
-        <!-- /nav -->
+        <div class="cdwrapper"><a href="#" id="mobile_nav_button"><?php _e('Menu', 'webfactor'); ?> </a><?php html5blank_nav(); ?></div>
+      </nav>
+      <!-- /nav -->
 
     </header>
     <!-- /header -->
