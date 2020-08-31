@@ -873,7 +873,7 @@ if (defined('ICL_LANGUAGE_CODE')) {
     add_filter('attachment_link', 'wpse_add_current_requests_query_args', 10, 3);
     add_filter('post_type_link', 'wpse_add_current_requests_query_args', 10, 3);
 
-    function wpse_add_current_requests_query_args($permalink, $post, $leavename)
+    function wpse_add_current_requests_query_args($permalink, $post)
     {
         if (!is_admin()) {
             // we only want to modify the permalink URL on the front-end
