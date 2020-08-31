@@ -32,12 +32,17 @@
 		if (typeof site_lang !== 'undefined') {
 			if (site_lang == 'en') {
 				$('section  a').each(function () {
-					var $this = $(this);
-					var $url = $this.attr('href');
-					if (!$url.includes('lang=')) {
-						var $newurl = $url + '?lang=en';
-						$this.attr('href', $newurl);
-					}
+
+					$(this).attr('href', function (i, val) {
+						if (!val.includes('lang=')) {
+							return val + '?lang=en';
+						}
+						return val;
+					});
+
+
+
+
 				});
 			}
 		}
