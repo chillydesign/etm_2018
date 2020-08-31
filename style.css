@@ -298,9 +298,17 @@ STRUCTURE
   float: left;
 }
 
+.search_and_language {
+  float: right;
+}
+
+.searchbar {
+  display: inline-block;
+}
+
 .searchbar .search-input {
   -webkit-appearance: none;
-  float: right;
+  /* float: right; */
   background-color: black;
   background-image: url(img/magnifyingglass.jpg);
   background-size: 17px;
@@ -324,12 +332,30 @@ STRUCTURE
 }
 
 
+
+
+
 /* wpml language switcher */
 .language_switcher {
-  position: absolute;
-  top: 0;
-  right: 0;
+  display: inline-block;
 }
+
+.language_switcher ul li a {
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+  background: black;
+  color: white;
+  text-align: center;
+  line-height: 30px;
+  padding: 0;
+}
+
+.language_switcher ul li a:hover,
+.searchbar .search-input:hover {
+  background-color: #069;
+}
+
 
 /* wpml language switcher */
 
