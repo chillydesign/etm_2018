@@ -27,6 +27,22 @@
 		});
 
 
+		// ADD LANGUAGE GET PARAM TO EVERY LINK
+		// BECAUSE I CANT DO IT USING PHP WITH ACF
+		if (typeof site_lang !== 'undefined') {
+			if (site_lang == 'en') {
+				$('section  a').each(function () {
+					var $this = $(this);
+					var $url = $this.href;
+					if (!$url.includes('lang=')) {
+						var $newurl = $url + '?lang=en';
+						$this.href = $newurl;
+					}
+				});
+			}
+		}
+
+
 
 		$('#menu-item-299 > a').click(false);
 		// $('p:empty').remove();

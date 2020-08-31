@@ -33,6 +33,13 @@
 			<!-- /wrapper -->
 
 
+
+			<?php if (defined('ICL_LANGUAGE_CODE')) : ?>
+				<script>
+					var site_lang = '<?php echo ICL_LANGUAGE_CODE; ?>';
+				</script>
+			<?php endif; ?>
+
 			<?php wp_footer(); ?>
 
 			<!-- analytics -->

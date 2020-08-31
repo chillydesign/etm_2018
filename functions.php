@@ -867,31 +867,32 @@ function format_text_for_mailto_param($text)
 
 
 
-/// add get param to all links
-add_filter('post_link', 'wpse_add_current_requests_query_args', 10, 3);
-add_filter('page_link', 'wpse_add_current_requests_query_args', 10, 3);
-add_filter('attachment_link', 'wpse_add_current_requests_query_args', 10, 3);
-add_filter('post_type_link', 'wpse_add_current_requests_query_args', 10, 3);
-
-function wpse_add_current_requests_query_args($permalink, $post)
-{
+// /// add lang get param to all links
+// NOT USED NOW. WE USE A JS HACK BECAUSE THIS DOESNT WORK WITH OUTPUT FROM ACF WYSIWYG FIELDS
+// add_filter('post_link', 'wpse_add_current_requests_query_args', 10, 3);
+// add_filter('page_link', 'wpse_add_current_requests_query_args', 10, 3);
+// add_filter('attachment_link', 'wpse_add_current_requests_query_args', 10, 3);
+// add_filter('post_type_link', 'wpse_add_current_requests_query_args', 10, 3);
 
 
-    if (defined('ICL_LANGUAGE_CODE')) {
-        if (is_admin()) {
-            // we only want to modify the permalink URL on the front-end
-            return;
-        }
-
-        // for the purposes of this answer, we ignore the $post & $leavename
-        // params, but they are there in case you want to do conditional
-        // processing based on their value
+// add_filter('acf_the_content', 'replace_content');
+// function wpse_add_current_requests_query_args($permalink, $post)
+// {
 
 
-        $current_lang = ICL_LANGUAGE_CODE;
-        return (esc_url(add_query_arg('lang', $current_lang,  $permalink)));
-    }
-}
+//     if (defined('ICL_LANGUAGE_CODE')) {
+//         if (is_admin()) {
+//             // we only want to modify the permalink URL on the front-end
+//             return;
+//         }
+
+//         // for the purposes of this answer, we ignore the $post & $leavename
+//         // params, but they are there in case you want to do conditional
+//         // processing based on their value
+//         $current_lang = ICL_LANGUAGE_CODE;
+//         return (esc_url(add_query_arg('lang', $current_lang,  $permalink)));
+//     }
+// }
 
 
 
