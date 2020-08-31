@@ -878,10 +878,10 @@ function wpse_add_current_requests_query_args($permalink, $post)
 
 
     if (defined('ICL_LANGUAGE_CODE')) {
-        if (is_admin()) {
-            // we only want to modify the permalink URL on the front-end
-            return;
-        }
+        // if (is_admin()) {
+        //     // we only want to modify the permalink URL on the front-end
+        //     return;
+        // }
 
         // for the purposes of this answer, we ignore the $post & $leavename
         // params, but they are there in case you want to do conditional
