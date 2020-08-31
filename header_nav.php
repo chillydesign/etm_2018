@@ -13,6 +13,12 @@
 
         <div class="searchbar"><?php get_template_part('searchform'); ?></div>
 
+        <?php if (isset($_GET['language'])) : ?>
+          <div class="language_switcher">
+            <?php do_action('wpml_add_language_selector'); ?>
+          </div>
+        <?php endif; ?>
+
         <div class="clear"></div>
       </div>
 

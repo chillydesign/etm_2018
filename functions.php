@@ -133,7 +133,7 @@ add_action('after_setup_theme', 'remove_json_api');
 
 function wf_version()
 {
-    return '0.1.0';
+    return '0.1.1';
 }
 
 
