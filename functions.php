@@ -191,8 +191,28 @@ function html5blank_styles()
     // wp_register_style('normalize', $tdu . '/normalize.css', array(), '1.0', 'all');
     // wp_enqueue_style('normalize'); // Enqueue it!
 
+
+    wp_register_style('bootstrap',  $tdu . '/bootstrap.css', array(), wf_version(), 'all');
+    wp_enqueue_style('bootstrap'); // Enqueue it!
+
+    wp_register_style('featherlight', '//cdn.rawgit.com/noelboss/featherlight/1.3.5/release/featherlight.min.css', array(), wf_version(), 'all');
+    wp_enqueue_style('featherlight'); // Enqueue it!
+
+    wp_register_style('featherlightgal', '//cdn.rawgit.com/noelboss/featherlight/1.4.0/release/featherlight.gallery.min.css', array(), wf_version(), 'all');
+    wp_enqueue_style('featherlightgal'); // Enqueue it!
+
+    wp_register_style('bjqs',  $tdu . '/bjqs.css', array(), wf_version(), 'all');
+    wp_enqueue_style('bjqs'); // Enqueue it!
+
+    wp_register_style('bxslider',  $tdu . '/jquery.bxslider.css', array(), wf_version(), 'all');
+    wp_enqueue_style('bxslider'); // Enqueue it!
+
+
     wp_register_style('html5blank',  $tdu . '/style.css', array(), wf_version(), 'all');
     wp_enqueue_style('html5blank'); // Enqueue it!
+
+
+
 }
 
 // Register HTML5 Blank Navigation

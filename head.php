@@ -1,49 +1,58 @@
 <!doctype html>
 <html <?php language_attributes(); ?> class="no-js">
-	<head>
-		<meta charset="<?php bloginfo('charset'); ?>">
-		<title><?php wp_title(''); ?><?php if(wp_title('', false)) { echo ' :'; } ?> <?php bloginfo('name'); ?></title>
 
-		<link href="//www.google-analytics.com" rel="dns-prefetch">
-        <link href="<?php echo get_template_directory_uri(); ?>/img/icons/favicon.ico" rel="shortcut icon">
-        <link href="<?php echo get_template_directory_uri(); ?>/img/icons/touch.png" rel="apple-touch-icon-precomposed">
-        <link href="<?php echo get_template_directory_uri(); ?>/bootstrap.css" rel="stylesheet">
+<head>
+	<meta charset="<?php bloginfo('charset'); ?>">
+	<title><?php wp_title(''); ?><?php if (wp_title('', false)) {
+										echo ' :';
+									} ?> <?php bloginfo('name'); ?></title>
 
-		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv=”Pragma” content=”no-cache”>
-<meta http-equiv=”Expires” content=”-1″>
-<meta http-equiv=”CACHE-CONTROL” content=”NO-CACHE”>
-
-		<?php wp_head(); ?>
-		<link href="//cdn.rawgit.com/noelboss/featherlight/1.3.5/release/featherlight.min.css" type="text/css" rel="stylesheet" />
-		<link href="//cdn.rawgit.com/noelboss/featherlight/1.4.0/release/featherlight.gallery.min.css" type="text/css" rel="stylesheet" />
-
-		<link href="<?php echo get_template_directory_uri(); ?>/bjqs.css" rel="stylesheet">
-		<link href="<?php echo get_template_directory_uri(); ?>/jquery.bxslider.css" rel="stylesheet" />
-        <script src="https://use.fontawesome.com/188c7a83eb.js"></script>
-
-		<!-- Facebook Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window,document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
- fbq('init', '232205004307363');
-fbq('track', 'PageView');
-</script>
-<noscript>
- <img height="1" width="1"
-src="https://www.facebook.com/tr?id=232205004307363&ev=PageView
-&noscript=1"/>
-</noscript>
-<!-- End Facebook Pixel Code -->
+	<link href="//www.google-analytics.com" rel="dns-prefetch">
+	<link href="<?php echo get_template_directory_uri(); ?>/img/icons/favicon.ico" rel="shortcut icon">
+	<link href="<?php echo get_template_directory_uri(); ?>/img/icons/touch.png" rel="apple-touch-icon-precomposed">
 
 
-	</head>
-	<body <?php body_class(); ?>>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv=”Pragma” content=”no-cache”>
+	<meta http-equiv=”Expires” content=”-1″>
+	<meta http-equiv=”CACHE-CONTROL” content=”NO-CACHE”>
+
+	<?php wp_head(); ?>
+
+	<script src="https://use.fontawesome.com/188c7a83eb.js"></script>
+
+	<!-- Facebook Pixel Code -->
+	<script>
+		! function(f, b, e, v, n, t, s) {
+			if (f.fbq) return;
+			n = f.fbq = function() {
+				n.callMethod ?
+					n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+			};
+			if (!f._fbq) f._fbq = n;
+			n.push = n;
+			n.loaded = !0;
+			n.version = '2.0';
+			n.queue = [];
+			t = b.createElement(e);
+			t.async = !0;
+			t.src = v;
+			s = b.getElementsByTagName(e)[0];
+			s.parentNode.insertBefore(t, s)
+		}(window, document, 'script',
+			'https://connect.facebook.net/en_US/fbevents.js');
+		fbq('init', '232205004307363');
+		fbq('track', 'PageView');
+	</script>
+	<noscript>
+		<img height="1" width="1" src="https://www.facebook.com/tr?id=232205004307363&ev=PageView
+&noscript=1" />
+	</noscript>
+	<!-- End Facebook Pixel Code -->
+
+
+</head>
+
+<body <?php body_class(); ?>>
 	<?php header('X-Frame-Options: GOFORIT'); ?>
