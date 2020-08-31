@@ -33,10 +33,10 @@
 			if (site_lang == 'en') {
 				$('section  a').each(function () {
 					var $this = $(this);
-					var $url = $this.href;
+					var $url = $this.attr('href');
 					if (!$url.includes('lang=')) {
 						var $newurl = $url + '?lang=en';
-						$this.href = $newurl;
+						$this.attr('href', $newurl);
 					}
 				});
 			}
