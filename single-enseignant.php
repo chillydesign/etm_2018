@@ -7,7 +7,12 @@
 	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 			<section class="pagetitle">
 				<div class="wrapper">
-					<div class="breadcrumb" style="font-size:1.12em;"><a href="<?php echo home_url(); ?> "><?php _e('Home', 'webfactor'); ?></a> > ETM > <a href="<?php echo home_url(); ?>/enseignants"><?php _e('Enseignants', 'webfactor'); ?></a> > <?php the_title(); ?> </div>
+					<div class="breadcrumb" style="font-size:1.12em;">
+						<a href="<?php echo home_url(); ?> "><?php _e('Home', 'webfactor'); ?></a>
+						> ETM >
+						<a href="<?php echo home_url('enseignants'); ?>"><?php _e('Enseignants', 'webfactor'); ?></a>
+						> <?php the_title(); ?>
+					</div>
 				</div>
 			</section>
 
