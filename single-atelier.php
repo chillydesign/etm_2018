@@ -39,7 +39,7 @@
 							<div class="<?php echo $col; ?>"><?php the_sub_field('texte'); ?></div>
 						<?php endwhile ?>
 						<!-- <p class="asterix">* Tarif d’un cours collectif associé à un cours instrumental</p> -->
-						<p><a href="<?php echo home_url(); ?>/inscription">> <?php _e('En savoir plus sur les inscriptions', 'webfactor'); ?></a></p>
+						<p><a href="<?php echo home_url(); ?>/inscription">> <?php _e('Learn more about registrations', 'webfactor'); ?></a></p>
 
 					</div>
 				</article>

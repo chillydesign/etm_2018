@@ -48,7 +48,7 @@
 									<?php $date_field = get_field('date'); ?>
 									<?php if (!empty($date_field)) { ?><h2 style="font-weight:300; margin:-30px 0 30px; font-size:1.2em;"><?php the_field('date'); ?></h2><?php } ?>
 									<p><?php the_excerpt(); ?>&hellip;<br /></br />
-										<a href="<?php the_permalink(); ?>"><?php _e('Lire la suite', 'webfactor'); ?></a></p>
+										<a href="<?php the_permalink(); ?>"><?php _e('Read more', 'webfactor'); ?></a></p>
 								</div>
 								<div class="col-md-3 col-md-pull-9" style="padding: 0px 60px 0 0;"><a href="<?php the_permalink(); ?>">
 										<!-- <div style="width:100%; padding: 37%; background:url(<?php //echo $url;

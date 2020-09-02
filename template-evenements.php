@@ -47,7 +47,7 @@
 									<h2><a href="<?php echo $permalink; ?>"><?php echo $title; ?></a></h2>
 									<?php $date_field = get_field('date'); ?>
 									<?php if (!empty($date_field)) { ?><h2 style="font-weight:300; margin:-30px 0 30px; font-size:1.2em;"><?php the_field('date'); ?></h2><?php } ?>
-									<p><?php the_excerpt(); ?>&hellip; <a href="<?php echo $permalink; ?>; ?>"><?php _e('Lire la suite', 'webfactor'); ?></a></p>
+									<p><?php the_excerpt(); ?>&hellip; <a href="<?php echo $permalink; ?>; ?>"><?php _e('Read more', 'webfactor'); ?></a></p>
 
 									<?php generate_social_links($permalink, $title); ?>
 								</div>
