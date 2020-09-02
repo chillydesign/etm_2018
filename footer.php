@@ -5,7 +5,7 @@
 						<?php _e('ETM – école des musiques actuelles', 'webfactor'); ?><br>
 						Route des Acacias 8, 1227 Les Acacias, Genève, Suisse | +41 (0)22 344 44 22 | <a href="mailto:info@etm.ch"> info@etm.ch</a><br>
 						<div style="margin-top: 5px;">
-							<?php _e('ETM is a music school certified by the department of public education, culture and sport and is supported by the Geneva Republic and Canton.', 'webfactor'); ?></div>
+							<?php _e('L’ETM, école accréditée par le département de l’instruction publique, de la culture et du sport, bénéficie du soutien de la République et canton de Genève.', 'webfactor'); ?></div>
 					</div>
 					<div class="socialmedia">
 						<a target="_blank" href="https://www.youtube.com/channel/UCvwJprSEMiebZqfYamLsYTQ">
