@@ -401,7 +401,7 @@ if (have_rows('sections')) {
 														<?php //the_content(); 
 														?>
 														<div class="excerpt"><?php the_excerpt(); ?>...</div>
-														<div style="margin:10px 0;"><a href="<?php the_permalink(); ?>">> <?php _e('Read more', 'webfactor'); ?> </a></div>
+														<div style="margin:10px 0;"><a href="<?php the_permalink(); ?>">> <?php _e('Lire la suite', 'webfactor'); ?> </a></div>
 													</div>
 													<div class="col-md-4 hidden-sm hidden-xs"><a href="<?php the_permalink(); ?>">
 															<!-- 
