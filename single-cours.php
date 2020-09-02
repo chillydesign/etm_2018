@@ -11,7 +11,7 @@
 			<section class="banner"><img style="width:100%; height:auto;" src="<?php echo $banner_image_field['url']; ?>"></section>
 			<section class="pagetitle">
 				<div class="wrapper">
-					<div class="breadcrumb" style="font-size:1.12em;"><a href="<?php echo home_url(); ?> "><?php _e('Home', 'webfactor'); ?></a> > <a href="<?php echo home_url(); ?>/les-instruments-enseignes-dans-tous-les-styles"><?php _e('Filière instrumentale', 'webfactor'); ?></a> > <?php the_title(); ?> </div>
+					<div class="breadcrumb" style="font-size:1.12em;"><a href="<?php echo home_url(); ?> "><?php _e('Home', 'webfactor'); ?></a> > <a href="<?php echo home_url('les-instruments-enseignes-dans-tous-les-styles'); ?>"><?php _e('Filière instrumentale', 'webfactor'); ?></a> > <?php the_title(); ?> </div>
 					<h1><?php the_title(); ?></h1>
 				</div>
 			</section>
@@ -28,8 +28,8 @@
 						<div><?php echo get_field('description'); ?></div>
 						<!-- <p><a href="<?php //echo home_url(); 
 											?>/tarifs">> Voir les tarifs</a></p>
-				  <p><a href="<?php //echo home_url(); 
-								?>/inscription">> En savoir plus sur les inscriptions</a></p> -->
+				  <p><a href="<?php //echo home_url('inscription'); 
+								?>">> En savoir plus sur les inscriptions</a></p> -->
 
 					</div>
 				</article>

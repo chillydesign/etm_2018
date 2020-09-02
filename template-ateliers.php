@@ -37,7 +37,7 @@
 						<?php endwhile ?>
 
 						<!-- <p class="asterix">* Tarif d’un cours collectif associé à un cours instrumental</p>
-				  <p><a href="<?php echo home_url(); ?>/inscription">> En savoir plus sur les inscriptions</a></p> -->
+				  <p><a href="<?php echo home_url('inscription'); ?>">> En savoir plus sur les inscriptions</a></p> -->
 
 					</div>
 				</article>
