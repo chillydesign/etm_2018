@@ -1786,25 +1786,30 @@ div.aligncenter {
 .alignright {
   float: right;
   margin: 5px 0 20px 20px;
+  width: auto;
 }
 
 .alignleft {
   float: left;
   margin: 5px 20px 20px 0;
+  width: auto;
 }
 
 a img.alignright {
   float: right;
   margin: 5px 0 20px 20px;
+  width: auto;
 }
 
 a img.alignnone {
   margin: 5px 20px 20px 0;
+  width: auto;
 }
 
 a img.alignleft {
   float: left;
   margin: 5px 20px 20px 0;
+  width: auto;
 }
 
 a img.aligncenter {
