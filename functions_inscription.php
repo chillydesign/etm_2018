@@ -240,8 +240,8 @@ function send_inscription_emails($data) {
 
     $event_title = $data['event_title'];
 
-    $headers = 'From: ETM <rissel.melissa@gmail.com>' . "\r\n";
-    $headers .= 'Reply-To: ETM <rissel.melissa@gmail.com>' . "\r\n";
+    $headers = 'From: ETM <event@etm.ch>' . "\r\n";
+    $headers .= 'Reply-To: ETM <event@etm.ch>' . "\r\n";
     $emailheader = file_get_contents(dirname(__FILE__) . '/emails/email_header.php');
     $emailfooter = file_get_contents(dirname(__FILE__) . '/emails/email_footer.php');
     add_filter('wp_mail_content_type',  'api_return_html');
@@ -252,7 +252,8 @@ function send_inscription_emails($data) {
     $paragraph_for_admin = '<p>Nouvelle inscription pour l’évènement ' .  $event_title . '</p><br /><br />';
 
 
-    $paragraph_fields = '<p><b>Titre</b> : ' . $data['title'] . '</p>';
+    $paragraph_fields = '<br><br><br><p><b>Détails de l\'inscription</b></p>';
+    $paragraph_fields .= '<p><b>Titre</b> : ' . $data['title'] . '</p>';
     $paragraph_fields .= '<p><b>Prénom</b> : ' . $data['first_name'] . '</p>';
     $paragraph_fields .= '<p><b>Nom</b> : ' . $data['last_name'] . '</p>';
     $paragraph_fields .= '<p><b>Email</b> :' . $data['email'] . '</p>';
