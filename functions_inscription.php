@@ -117,19 +117,19 @@ function process_inscription_form() {
         $choice_1 = $choice_2 = $choice_3 = $choice_4 = $choice_5 = false;
 
         if (isset($_POST['choice_1'])) {
-            $choice_1 = [$_POST['choice_1'], $_POST['choice_1_name']];
+            $choice_1 = [1, $_POST['choice_1'], $_POST['choice_1_name']];
         }
         if (isset($_POST['choice_2'])) {
-            $choice_2 = [$_POST['choice_2'], $_POST['choice_2_name']];
+            $choice_2 = [2, $_POST['choice_2'], $_POST['choice_2_name']];
         }
         if (isset($_POST['choice_3'])) {
-            $choice_3 = [$_POST['choice_3'], $_POST['choice_3_name']];
+            $choice_3 = [3, $_POST['choice_3'], $_POST['choice_3_name']];
         }
         if (isset($_POST['choice_4'])) {
-            $choice_4 = [$_POST['choice_4'], $_POST['choice_4_name']];
+            $choice_4 = [4, $_POST['choice_4'], $_POST['choice_4_name']];
         }
         if (isset($_POST['choice_5'])) {
-            $choice_5 = [$_POST['choice_5'], $_POST['choice_5_name']];
+            $choice_5 = [5, $_POST['choice_5'], $_POST['choice_5_name']];
         }
 
         $choices = array($choice_1, $choice_2, $choice_3, $choice_4, $choice_5);
@@ -169,23 +169,25 @@ function process_inscription_form() {
                 foreach ($choices as $choice) {
                     if ($choice != false) {
 
-                        $score = $choice[0];
-                        $choice_name = $choice[1];
-                        if ($score == 1) {
-                            $first_choice = $choice_name;
-                            update_field('choix_1',  $choice_name . ' - ' . $score,  $new_inscription);
-                        } elseif ($score == 2) {
-                            $second_choice = $choice_name;
-                            update_field('choix_2',   $choice_name . ' - ' . $score,  $new_inscription);
-                        } elseif ($score == 3) {
-                            $third_choice = $choice_name;
-                            update_field('choix_3',  $choice_name . ' - ' . $score,  $new_inscription);
-                        } elseif ($score == 4) {
-                            $fourth_choice = $choice_name;
-                            update_field('choix_4',  $choice_name . ' - ' . $score,  $new_inscription);
-                        } elseif ($score == 5) {
-                            $fifth_choice = $choice_name;
-                            update_field('choix_5',  $choice_name . ' - ' . $score,  $new_inscription);
+                        $index = $choice[0];
+                        $amount = $choice[1];
+                        $choice_name = $choice[2];
+                        $text = $choice_name . ' - ' . $amount;
+                        if ($index == 1) {
+                            $first_choice = $text;
+                            update_field('choix_1', $text,  $new_inscription);
+                        } elseif ($index == 2) {
+                            $second_choice = $text;
+                            update_field('choix_2',   $text,  $new_inscription);
+                        } elseif ($index == 3) {
+                            $third_choice = $text;
+                            update_field('choix_3',  $text,  $new_inscription);
+                        } elseif ($index == 4) {
+                            $fourth_choice = $text;
+                            update_field('choix_4',  $text,  $new_inscription);
+                        } elseif ($index == 5) {
+                            $fifth_choice =  $text;
+                            update_field('choix_5',   $text,  $new_inscription);
                         }
                     }
                 }
