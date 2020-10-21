@@ -252,7 +252,7 @@ function send_inscription_emails($data) {
     $paragraph_for_admin = '<p>Nouvelle inscription pour l’évènement ' .  $event_title . '</p>';
 
 
-    $paragraph_fields = '<br><br><br><p><b>Détails de l\'inscription</b></p>';
+    $paragraph_fields = '<br><br><p><b>Détails de l\'inscription</b></p>';
     $paragraph_fields .= '<p><b>Titre</b> : ' . $data['title'] . '</p>';
     $paragraph_fields .= '<p><b>Prénom</b> : ' . $data['first_name'] . '</p>';
     $paragraph_fields .= '<p><b>Nom</b> : ' . $data['last_name'] . '</p>';
