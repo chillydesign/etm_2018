@@ -51,7 +51,7 @@
         <div class="row">
 
             <div class="col-sm-8">
-                <p style="margin:0"><strong>Ticket type:</strong></p>
+                <p style="margin:0"><strong>Ticket :</strong></p>
                 <?php $pricing = get_field_object('pricing'); ?>
                 <div id="choices_rows">
                     <?php $i = 0;
