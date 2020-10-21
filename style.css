@@ -1964,7 +1964,10 @@ padding: 20px;
 */
 }
 
-
+.inscription_box {
+  background: #f2f2f2;
+  padding: 40px;
+}
 
 #inscription_form .radio_button input {
   display: none;
@@ -1973,15 +1976,16 @@ padding: 20px;
 }
 
 .radio_button span {
-  background: #f2f2f2;
+  background: #fff;
   border: 1px solid #eee;
   border-radius: 5px;
-  padding: 15px;
-  font-size: 1.4em;
-  margin: 0;
+  padding: 5px 15px;
+  font-size: 1.1em;
+  margin: -6px 2px 0 0;
   display: inline-block;
   cursor: pointer;
 }
+
 
 .radio_button input:checked+span {
   background-color: #0c84cf;

@@ -37,7 +37,7 @@
 
 								<?php if ($inscription_form &&   $inscription_form != 'none') : ?>
 									<div class="inscription_box">
-										<p><strong> Formulaire de réservation</strong></p>
+										<h5> Formulaire de réservation</h5>
 										<?php if (sizeof($current_inscriptions)  <  intval($number_of_possible_applicants)) : ?>
 											<?php get_template_part('inscription-form');    // INSCRIPTION FORM 
 											?>
