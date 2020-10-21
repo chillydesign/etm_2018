@@ -28,8 +28,8 @@
 
 								<?php
 								$inscription_form = get_field('inscription_form');
-								$number_of_possible_applicants = get_field('number_of_possible_applicants');
-								$current_inscriptions = get_posts(array('post_parent' => get_the_id(), 'post_type'  => 'inscription', 'posts_per_page' => -1, 'post_status' => 'publish'));
+								$number_of_possible_applicants =   100000; // get_field('number_of_possible_applicants');
+								$current_inscriptions  = 0; // get_posts(array('post_parent' => get_the_id(), 'post_type'  => 'inscription', 'posts_per_page' => -1, 'post_status' => 'publish'));
 								?>
 
 
