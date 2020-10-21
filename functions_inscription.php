@@ -204,7 +204,7 @@ function process_inscription_form() {
 
 
                 // SEND EMAILS TO THE ADMIN AND THE PERSON WHO SUBMITTED
-                // send_inscription_emails($_POST);
+                send_inscription_emails($_POST);
 
 
 
