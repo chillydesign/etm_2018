@@ -1940,7 +1940,7 @@ a img.aligncenter {
 
 #inscription_form input[type="number"] {
   max-width: 120px;
-
+  margin-top: 0 !important;
 }
 
 #inscription_form input[type="submit"] {
