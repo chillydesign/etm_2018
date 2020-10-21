@@ -1925,3 +1925,59 @@ a img.aligncenter {
     page-break-after: avoid;
   }
 }
+
+
+
+#inscription_form input,
+#inscription_form textarea {
+  border: 0;
+  border-bottom: solid 1px #777;
+  padding: 5px;
+  margin: 0 0 20px;
+  width: 100%;
+  background-color: transparent;
+}
+
+#inscription_form input[type="number"] {
+  max-width: 120px;
+
+}
+
+#inscription_form input[type="submit"] {
+  background-color: black;
+  color: white;
+  padding: 15px;
+
+}
+
+#inscription_form input[type="radio"],
+#inscription_form input[type="checkbox"] {
+  width: auto;
+  margin-left: 10px;
+}
+
+#choices_rows {
+  margin: 10px 0 20px;
+  /* background: #f7f7f7;
+padding: 20px; */
+}
+
+
+
+.alert_message {
+  padding: 10px;
+  background: #ddd;
+  border: 1px solid #aaa;
+  margin: 0 0 10px;
+  border-radius: 5px;
+}
+
+.alert_success {
+  background-color: #d7ffa6;
+  border-color: #a9ca7a;
+}
+
+.alert_error {
+  background-color: #fdcaca;
+  border-color: #ee6a6a;
+}
