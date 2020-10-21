@@ -114,25 +114,26 @@ function process_inscription_form() {
         $telephone = $_POST['telephone'];
 
 
-        $choice_1 = $choice_2 = $choice_3 = $choice_4 = $choice_5 = false;
 
-        if (isset($_POST['choice_1'])) {
-            $choice_1 = [1, $_POST['choice_1'], $_POST['choice_1_name']];
-        }
-        if (isset($_POST['choice_2'])) {
-            $choice_2 = [2, $_POST['choice_2'], $_POST['choice_2_name']];
-        }
-        if (isset($_POST['choice_3'])) {
-            $choice_3 = [3, $_POST['choice_3'], $_POST['choice_3_name']];
-        }
-        if (isset($_POST['choice_4'])) {
-            $choice_4 = [4, $_POST['choice_4'], $_POST['choice_4_name']];
-        }
-        if (isset($_POST['choice_5'])) {
-            $choice_5 = [5, $_POST['choice_5'], $_POST['choice_5_name']];
-        }
+        // $choice_1 = $choice_2 = $choice_3 = $choice_4 = $choice_5 = false;
 
-        $choices = array($choice_1, $choice_2, $choice_3, $choice_4, $choice_5);
+        // if (isset($_POST['choice_1'])) {
+        //     $choice_1 = [1, $_POST['choice_1'], $_POST['choice_1_name']];
+        // }
+        // if (isset($_POST['choice_2'])) {
+        //     $choice_2 = [2, $_POST['choice_2'], $_POST['choice_2_name']];
+        // }
+        // if (isset($_POST['choice_3'])) {
+        //     $choice_3 = [3, $_POST['choice_3'], $_POST['choice_3_name']];
+        // }
+        // if (isset($_POST['choice_4'])) {
+        //     $choice_4 = [4, $_POST['choice_4'], $_POST['choice_4_name']];
+        // }
+        // if (isset($_POST['choice_5'])) {
+        //     $choice_5 = [5, $_POST['choice_5'], $_POST['choice_5_name']];
+        // }
+
+        // $choices = array($choice_1, $choice_2, $choice_3, $choice_4, $choice_5);
 
 
         // if we  have the right data and user logged in
@@ -163,40 +164,47 @@ function process_inscription_form() {
                     endif;
                 endforeach;
 
-                $first_choice = $second_choice = $third_choice = $fourth_choice = $fifth_choice = false;
 
 
-                foreach ($choices as $choice) {
-                    if ($choice != false) {
-
-                        $index = $choice[0];
-                        $amount = $choice[1];
-                        $choice_name = $choice[2];
-                        $text = $choice_name . ' - ' . $amount;
-                        if ($index == 1) {
-                            $first_choice = $text;
-                            update_field('choix_1', $text,  $new_inscription);
-                        } elseif ($index == 2) {
-                            $second_choice = $text;
-                            update_field('choix_2',   $text,  $new_inscription);
-                        } elseif ($index == 3) {
-                            $third_choice = $text;
-                            update_field('choix_3',  $text,  $new_inscription);
-                        } elseif ($index == 4) {
-                            $fourth_choice = $text;
-                            update_field('choix_4',  $text,  $new_inscription);
-                        } elseif ($index == 5) {
-                            $fifth_choice =  $text;
-                            update_field('choix_5',   $text,  $new_inscription);
-                        }
-                    }
+                if (isset($_POST['choice'])) {
+                    $choice = $_POST['choice'];
+                    update_field('choice', $choice,  $new_inscription);
                 }
 
+                // $first_choice = $second_choice = $third_choice = $fourth_choice = $fifth_choice = false;
+                // foreach ($choices as $choice) {
+                //     if ($choice != false) {
 
-                $all_choices = array($first_choice, $second_choice, $third_choice, $fourth_choice, $fifth_choice);
+                //         $index = $choice[0];
+                //         $amount = $choice[1];
+                //         $choice_name = $choice[2];
+                //         $text = $choice_name . ' - ' . $amount;
+                //         if ($index == 1) {
+                //             $first_choice = $text;
+                //             update_field('choix_1', $text,  $new_inscription);
+                //         } elseif ($index == 2) {
+                //             $second_choice = $text;
+                //             update_field('choix_2',   $text,  $new_inscription);
+                //         } elseif ($index == 3) {
+                //             $third_choice = $text;
+                //             update_field('choix_3',  $text,  $new_inscription);
+                //         } elseif ($index == 4) {
+                //             $fourth_choice = $text;
+                //             update_field('choix_4',  $text,  $new_inscription);
+                //         } elseif ($index == 5) {
+                //             $fifth_choice =  $text;
+                //             update_field('choix_5',   $text,  $new_inscription);
+                //         }
+                //     }
+                // }
+                // $all_choices = array($first_choice, $second_choice, $third_choice, $fourth_choice, $fifth_choice);
+
+
+
+
 
                 // SEND EMAILS TO THE ADMIN AND THE PERSON WHO SUBMITTED
-                send_inscription_emails($_POST, $all_choices);
+                // send_inscription_emails($_POST);
 
 
 
@@ -228,7 +236,7 @@ function api_return_html() {
     return "text/html";
 }
 
-function send_inscription_emails($data, $choices) {
+function send_inscription_emails($data) {
 
     $event_title = $data['event_title'];
 
@@ -249,16 +257,19 @@ function send_inscription_emails($data, $choices) {
     $paragraph_for_admin .= '<p><b>Adresse électronique</b> ' . $data['email'] . '</p>';
     $paragraph_for_admin .= '<p><b>Telephone</b> ' . $data['telephone'] . '</p>';
 
+    if (isset($data['choice'])) :
+        $paragraph_for_admin .= '<p><b>Choix</b> ' . $data['choice'] . '</p>';
+    endif;
 
-    $paragraph_for_admin  .= '<p>';
-    $c = 1;
-    foreach ($choices as $choice) {
-        if ($choice) {
-            $paragraph_for_admin .= '<b>Choix ' . $c . '</b> : ' . $choice  . '<br />';
-        }
-        $c++;
-    }
-    $paragraph_for_admin  .= '</p>';
+    // $paragraph_for_admin  .= '<p>';
+    // $c = 1;
+    // foreach ($choices as $choice) {
+    //     if ($choice) {
+    //         $paragraph_for_admin .= '<b>Choix ' . $c . '</b> : ' . $choice  . '<br />';
+    //     }
+    //     $c++;
+    // }
+    // $paragraph_for_admin  .= '</p>';
 
     $email_subject_for_admin = 'Nouvelle inscription pour l’évènement ' . $event_title;
     $email_content_for_admin = $emailheader  . $paragraph_for_admin  . $emailfooter;

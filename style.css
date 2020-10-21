@@ -1958,8 +1958,34 @@ a img.aligncenter {
 
 #choices_rows {
   margin: 10px 0 20px;
-  /* background: #f7f7f7;
-padding: 20px; */
+  /* 
+  background: #f7f7f7;
+padding: 20px; 
+*/
+}
+
+
+
+#inscription_form .radio_button input {
+  display: none;
+  margin: 0;
+  padding: 0;
+}
+
+.radio_button span {
+  background: #f2f2f2;
+  border: 1px solid #eee;
+  border-radius: 5px;
+  padding: 15px;
+  font-size: 1.4em;
+  margin: 0;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.radio_button input:checked+span {
+  background-color: #0c84cf;
+  color: white;
 }
 
 
