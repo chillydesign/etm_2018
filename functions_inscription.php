@@ -279,7 +279,7 @@ function send_inscription_emails($data) {
 
     $email_subject_for_admin = 'Nouvelle inscription pour l’évènement ' . $event_title;
     $email_content_for_admin = $emailheader  . $paragraph_for_admin  . $emailfooter;
-    wp_mail('rissel.melissa@gmail.com', $email_subject_for_admin, $email_content_for_admin, $headers);
+    wp_mail('event@etm.ch', $email_subject_for_admin, $email_content_for_admin, $headers);
 
 
 
