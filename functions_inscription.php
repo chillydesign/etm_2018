@@ -79,7 +79,7 @@ function inscription_fields() {
         'title' => 'civilite',
         'first_name' => 'Prénom',
         'last_name' => 'Nom',
-        'email' => 'Adresse électronique',
+        'email' => 'Email',
         'telephone' => 'Téléphone',
 
 
@@ -240,8 +240,8 @@ function send_inscription_emails($data) {
 
     $event_title = $data['event_title'];
 
-    $headers = 'From: ETM <harvey.charles@gmail.com>' . "\r\n";
-    $headers .= 'Reply-To: ETM <harvey.charles@gmail.com>' . "\r\n";
+    $headers = 'From: ETM <rissel.melissa@gmail.com>' . "\r\n";
+    $headers .= 'Reply-To: ETM <rissel.melissa@gmail.com>' . "\r\n";
     $emailheader = file_get_contents(dirname(__FILE__) . '/emails/email_header.php');
     $emailfooter = file_get_contents(dirname(__FILE__) . '/emails/email_footer.php');
     add_filter('wp_mail_content_type',  'api_return_html');
@@ -251,15 +251,20 @@ function send_inscription_emails($data) {
 
     $paragraph_for_admin = '<p>Nouvelle inscription pour l’évènement ' .  $event_title . '</p><br /><br />';
 
-    $paragraph_for_admin .= '<p><b>Title</b> : ' . $data['title'] . '</p>';
-    $paragraph_for_admin .= '<p><b>Prénom</b> : ' . $data['first_name'] . '</p>';
-    $paragraph_for_admin .= '<p><b>Nom</b> : ' . $data['last_name'] . '</p>';
-    $paragraph_for_admin .= '<p><b>Adresse électronique</b> ' . $data['email'] . '</p>';
-    $paragraph_for_admin .= '<p><b>Telephone</b> ' . $data['telephone'] . '</p>';
+
+    $paragraph_fields = '<p><b>Title</b> : ' . $data['title'] . '</p>';
+    $paragraph_fields .= '<p><b>Prénom</b> : ' . $data['first_name'] . '</p>';
+    $paragraph_fields .= '<p><b>Nom</b> : ' . $data['last_name'] . '</p>';
+    $paragraph_fields .= '<p><b>Email</b> :' . $data['email'] . '</p>';
+    $paragraph_fields .= '<p><b>Téléphone</b> :' . $data['telephone'] . '</p>';
+
 
     if (isset($data['choice'])) :
-        $paragraph_for_admin .= '<p><b>Choix</b> ' . $data['choice'] . '</p>';
+        $paragraph_fields .= '<p><b>Choix</b> : ' . $data['choice'] . '</p>';
     endif;
+
+    $paragraph_for_admin .= $paragraph_fields;
+
 
     // $paragraph_for_admin  .= '<p>';
     // $c = 1;
@@ -273,11 +278,13 @@ function send_inscription_emails($data) {
 
     $email_subject_for_admin = 'Nouvelle inscription pour l’évènement ' . $event_title;
     $email_content_for_admin = $emailheader  . $paragraph_for_admin  . $emailfooter;
-    wp_mail('harvey.charles@gmail.com', $email_subject_for_admin, $email_content_for_admin, $headers);
+    wp_mail('rissel.melissa@gmail.com', $email_subject_for_admin, $email_content_for_admin, $headers);
 
 
 
     $paragraph_for_user = '<p>Bonjour,</p><p>Votre inscription a bien été enregistrée pour l’évènement ' .  $event_title . '</p><p>Bien cordialement, <br/> L’équipe ETM</p>';
+    $paragraph_for_user .= $paragraph_fields;
+
     $email_subject_for_user = 'ETM  - Inscription à l’évènement  ' . $event_title;
     $email_content_for_user = $emailheader . $paragraph_for_user .  $emailfooter;
 
@@ -286,42 +293,4 @@ function send_inscription_emails($data) {
 
 
     remove_filter('wp_mail_content_type', 'wpdocs_set_html_mail_content_type');
-}
-
-
-
-
-
-
-function make_inscription_field($attribute, $translation,   $type = 'input', $choices = []) {
-
-
-    $value = '';
-
-    if ($type == 'textarea') {
-
-        return '
-        <label for="inp_' . $attribute . '">' .  $translation   . '</label>
-        <textarea  id="inp_' . $attribute . '"  name="' . $attribute . '"> ' . $value . '</textarea>
-        ';
-    } elseif ($type == 'radio') {
-        $str = '';
-        foreach ($choices as $choice) {
-            $selected =  ($choice == $value) ? ' checked ' : '';
-            $str .=   '<label class="inline_label" for="inp_' . $attribute . '">' .  $choice   . '<input ' . $selected . ' type="radio" name="' . $attribute . '" value="' . $choice . '" /></label>';
-        }
-        return $str;
-    } elseif ($type == 'file') {
-
-        return '
-        <label for="inp_' . $attribute . '">' .  $translation   . '</label>
-        <input type="file"  id="inp_' . $attribute . '"  name="' . $attribute . '"  value="' . $value . '" />
-        ';
-    } else {
-
-        return '
-        <label for="inp_' . $attribute . '">' .  $translation   . '</label>
-        <input type="text"  id="inp_' . $attribute . '"  name="' . $attribute . '"  value="' . $value . '" />
-        ';
-    }
 }
