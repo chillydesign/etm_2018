@@ -50,7 +50,7 @@ function add_download_link($which) {
 
     if (is_post_type_archive('inscription')) {
         if ($which == 'bottom') {
-            $download_link = get_home_url() . '/api/v1/?inscriptions';
+            $download_link = get_template_directory_uri() . '/api/v1/inscriptions.php';
             echo '<div class="alignleft actions"><a class="action button-primary button" href="' . $download_link . '">Télécharger CSV</a></div>';
         }
     }
@@ -230,7 +230,12 @@ function process_inscription_form() {
 }
 
 
-
+function api_get_id($obj) {
+    return $obj->ID;
+}
+function api_get_meta_value($obj) {
+    return $obj->meta_value;
+}
 
 function api_return_html() {
     return "text/html";
