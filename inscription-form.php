@@ -46,7 +46,7 @@
 
 
 
-    <?php if (true || $inscription_form == 'complex') : ?>
+    <?php if ($inscription_form == 'complex') : ?>
 
         <div class="row">
 
