@@ -59,7 +59,7 @@
                         <label class="radio_button">
                             <?php $item =  get_sub_field('item'); ?>
                             <?php $checked = ($i == 0) ? 'checked="checked"' : ''; ?>
-                            <input <?php echo $checked; ?> type="radio" name="choice" id="choice" value="<?php echo $item; ?>" />
+                            <input required type="radio" name="choice" id="choice" value="<?php echo $item; ?>" />
                             <span><?php echo $item; ?></span>
                         </label>
                     <?php $i++;

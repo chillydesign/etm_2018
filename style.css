@@ -1976,8 +1976,8 @@ padding: 20px;
 }
 
 .radio_button span {
-  background: #fff !important;
-  border: 1px solid #ddd !important;
+  background: #ffffff;
+  border: 1px solid #ddd;
   border-radius: 5px;
   padding: 5px 15px;
   font-size: 1.1em;
