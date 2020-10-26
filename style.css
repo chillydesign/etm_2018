@@ -1976,14 +1976,15 @@ padding: 20px;
 }
 
 .radio_button span {
-  background: #fff;
-  border: 1px solid #eee;
+  background: #fff !important;
+  border: 1px solid #ddd !important;
   border-radius: 5px;
   padding: 5px 15px;
   font-size: 1.1em;
   margin: -6px 2px 0 0;
   display: inline-block;
   cursor: pointer;
+
 }
 
 

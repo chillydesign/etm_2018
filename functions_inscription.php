@@ -292,7 +292,9 @@ function send_inscription_emails($data) {
 
 
 
-    $paragraph_for_user = '<p>Bonjour,</p><p>Votre inscription a bien été enregistrée pour l’évènement ' .  $event_title . '</p><p>Bien cordialement, <br/> L’équipe ETM</p>';
+    $paragraph_for_user = '<p>Bonjour,</p><p> Votre inscription pour l’évènement ' .  $event_title . ' a bien été prise en compte et nous vous en remercions. Le code de la porte d’entrée de l’immeuble est le 1740. Merci de mémoriser ce code pour pouvoir accéder à l’événement.</p><p> En vous souhaitant d’ores et déjà un excellent moment musical ! </p><p>Bien cordialement, <br/> L’équipe ETM</p>';
+
+
     $paragraph_for_user .= $paragraph_fields;
 
     $email_subject_for_user = 'ETM  - Inscription à l’évènement  ' . $event_title;
