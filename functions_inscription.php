@@ -50,21 +50,25 @@ function add_download_link($which) {
 
     if (is_post_type_archive('inscription')) {
         if ($which == 'bottom') {
-            $download_link = get_template_directory_uri() . '/api/v1/inscriptions.php';
+            $download_link = api_api_url() . 'inscriptions.php';
             echo '<div class="alignleft actions"><a class="action button-primary button" href="' . $download_link . '">Télécharger CSV</a></div>';
         }
     }
 }
 
 
+function api_api_url() {
+    return get_template_directory_uri() . '/api/v1/';
+}
+
 function inscription_meta_box_markup() {
 
-    $download_link = get_home_url() . '/api/v1/?inscriptions&id=' . $_GET['post'];
+    $download_link = api_api_url() . 'inscriptions.php?id=' . $_GET['post'];
     echo '<div class=" "><a style="display:block;text-align:center" class="action button-primary button" href="' . $download_link . '">Télécharger les inscriptions (csv)</a></div>';
 }
 
 function add_inscription_meta_box() {
-    add_meta_box("inscriptions-meta-box", " Inscriptions", "inscription_meta_box_markup", "evenement", "side", "high", null);
+    add_meta_box("inscriptions-meta-box", " Inscriptions", "inscription_meta_box_markup", "actualite", "side", "high", null);
 }
 
 add_action("add_meta_boxes", "add_inscription_meta_box");
