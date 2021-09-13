@@ -37,9 +37,11 @@
 		</article>
 		<!-- /article -->
 	<?php else : ?>
-
-		<?php the_content(); ?>
-
+		<div class="container">
+			<div style="padding:80px 0">
+				<?php the_content(); ?>
+			</div>
+		</div>
 	<?php endif; ?>
 
 </main>
