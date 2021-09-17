@@ -790,6 +790,12 @@ body .bx-wrapper .bx-pager.bx-default-pager a {
   margin-bottom: 80px;
 }
 
+.row.atelier:nth-child(2n) {
+    background: #eee!important;
+    margin: 0 -30px 50px;
+    padding: 50px 30px;
+}
+
 p.new_atelier {
   font-size: 2em;
   font-weight: bold;

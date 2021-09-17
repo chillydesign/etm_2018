@@ -32,8 +32,9 @@
 								<div class="col-sm-6">
 									<div class="pricing"><?php the_sub_field('pricing'); ?></div>
 								</div>
+								<div class="<?php echo $col; ?>"><?php the_sub_field('texte'); ?></div>
 							</div>
-							<div class="<?php echo $col; ?>"><?php the_sub_field('texte'); ?></div>
+							
 						<?php endwhile ?>
 
 						<!-- <p class="asterix">* Tarif d’un cours collectif associé à un cours instrumental</p>

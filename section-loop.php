@@ -152,25 +152,27 @@ if (have_rows('sections')) {
 					$column5 = get_sub_field('column5');
 					$image6 = get_sub_field('image6');
 					$column6 = get_sub_field('column6');
+					if($image5 AND $image6){$colclass ='col-sm-2'; $textmargin="30px";}else{$colclass='col-sm-3 col-xs-6';$textmargin="0px";}
 				?>
 					<div class="wrapper">
 						<div class="row specialli">
-							<div class="col-sm-2">
+							<div class="<?php echo $colclass;?>">
 								<div style="width:100%; padding: 50%; background: url(<?php echo $image1['url']; ?>) no-repeat; background-size: cover; margin-bottom:30px; border-radius:50%;"></div>
-								<div style="margin-left:30px;"><?php echo $column1; ?></div>
+								<div style="margin-left:<?php echo $textmargin;?>;"><?php echo $column1; ?></div>
 							</div>
-							<div class="col-sm-2">
+							<div class="<?php echo $colclass;?>">
 								<div style="width:100%; padding: 50%; background: url(<?php echo $image2['url']; ?>) no-repeat; background-size: cover; margin-bottom:30px; border-radius:50%;"></div>
-								<div style="margin-left:30px;"><?php echo $column2; ?></div>
+								<div style="margin-left:<?php echo $textmargin;?>;"><?php echo $column2; ?></div>
 							</div>
-							<div class="col-sm-2">
+							<div class="<?php echo $colclass;?>">
 								<div style="width:100%; padding: 50%; background: url(<?php echo $image3['url']; ?>) no-repeat; background-size: cover; margin-bottom:30px; border-radius:50%;"></div>
-								<div style="margin-left:30px;"><?php echo $column3; ?></div>
+								<div style="margin-left:<?php echo $textmargin;?>;"><?php echo $column3; ?></div>
 							</div>
-							<div class="col-sm-2">
+							<div class="<?php echo $colclass;?>">
 								<div style="width:100%; padding: 50%; background: url(<?php echo $image4['url']; ?>) no-repeat; background-size: cover; margin-bottom:30px; border-radius:50%;"></div>
-								<div style="margin-left:30px;"><?php echo $column4; ?></div>
+								<div style="margin-left:<?php echo $textmargin;?>;"><?php echo $column4; ?></div>
 							</div>
+							<?php if($image5):?>
 							<div class="col-sm-2">
 								<div style="width:100%; padding: 50%; background: url(<?php echo $image5['url']; ?>) no-repeat; background-size: cover; margin-bottom:30px; border-radius:50%;"></div>
 								<div style="margin-left:30px;"><?php echo $column5; ?></div>
@@ -179,6 +181,7 @@ if (have_rows('sections')) {
 								<div style="width:100%; padding: 50%; background: url(<?php echo $image6['url']; ?>) no-repeat; background-size: cover; margin-bottom:30px; border-radius:50%;"></div>
 								<div style="margin-left:30px;"><?php echo $column6; ?></div>
 							</div>
+							<?php endif;?>
 						</div>
 					</div>
 				<?php }

@@ -14,7 +14,7 @@
 
 
 				<div class="wrapper">
-					<div class="breadcrumb" style="font-size:1.12em;"><a href="<?php echo home_url(); ?> "><?php _e('Home', 'webfactor'); ?></a> > <?php _e('Cours collectifs et Ateliers', 'webfactor'); ?> > <a href="<?php echo home_url(''); ?>"> <?php _e('Ateliers par style', 'webfactor'); ?> </a> > <?php the_title(); ?></div>
+					<div class="breadcrumb" style="font-size:1.12em;"><a href="<?php echo home_url(); ?> "><?php _e('Home', 'webfactor'); ?></a> > <?php _e('Cours collectifs et Ateliers', 'webfactor'); ?> > <a href="<?php echo home_url(''); ?>/ateliers-par-style"> <?php _e('Ateliers par style', 'webfactor'); ?> </a> > <?php the_title(); ?></div>
 					<h1><?php the_title(); ?></h1>
 				</div>
 			</section>
@@ -35,8 +35,9 @@
 								<div class="col-sm-6">
 									<div class="pricing"><?php the_sub_field('pricing'); ?></div>
 								</div>
+								<div class="<?php echo $col; ?>"><?php the_sub_field('texte'); ?></div>
 							</div>
-							<div class="<?php echo $col; ?>"><?php the_sub_field('texte'); ?></div>
+							
 						<?php endwhile ?>
 						<!-- <p class="asterix">* Tarif d’un cours collectif associé à un cours instrumental</p> -->
 						<p><a href="<?php echo home_url('inscription'); ?>">> <?php _e('En savoir plus sur les inscriptions', 'webfactor'); ?></a></p>

@@ -25,7 +25,7 @@ function create_post_type_inscription() {
             ),
             'public' => true,
             'hierarchical' => true, // Allows your posts to behave like Hierarchy Pages
-            'has_archive' => true,
+            'has_archive' => false,
             'exclude_from_search' => false, // remove from search engine
             'supports' => array(
                 'title',
