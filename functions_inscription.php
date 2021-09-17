@@ -248,6 +248,13 @@ function api_return_html() {
 function send_inscription_emails($data) {
 
     $event_title = $data['event_title'];
+    $event_id = $data['event_id'];
+    $nice_event_date  = '';
+    $event_date =  get_field('date', $event_id);
+    if ($event_date) {
+        $nice_event_date = ' le ' . $event_date;
+    }
+
 
     $headers = 'From: ETM <event@etm.ch>' . "\r\n";
     $headers .= 'Reply-To: ETM <event@etm.ch>' . "\r\n";
@@ -292,8 +299,7 @@ function send_inscription_emails($data) {
 
 
 
-    $paragraph_for_user = '<p>Bonjour,</p><p> Votre inscription pour l’évènement ' .  $event_title . ' a bien été prise en compte et nous vous en remercions. Le code de la porte d’entrée de l’immeuble est le 1740. Merci de mémoriser ce code pour pouvoir accéder à l’événement.</p><p> En vous souhaitant d’ores et déjà un excellent moment musical ! </p><p>Bien cordialement, <br/> L’équipe ETM</p>';
-
+    $paragraph_for_user = '<p>Bonjour,</p><p> Votre demande de réservation pour l’événement ' .  $event_title . $nice_event_date  . ' a bien été prise en compte et nous vous en remercions.</p><p> <strong>Vous recevrez prochainement de notre part la confirmation de réservation à cet événement.</strong></p><p> En vous souhaitant d’ores et déjà un excellent moment musical ! </p><p>Bien cordialement, <br/> L’équipe ETM</p>';
 
     $paragraph_for_user .= $paragraph_fields;
 
