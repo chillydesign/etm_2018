@@ -229,6 +229,7 @@ body {
 img {
   max-width: 100%;
   vertical-align: bottom;
+  height: auto;
 }
 
 a {
@@ -791,9 +792,9 @@ body .bx-wrapper .bx-pager.bx-default-pager a {
 }
 
 .row.atelier:nth-child(2n) {
-    background: #eee!important;
-    margin: 0 -30px 50px;
-    padding: 50px 30px;
+  background: #eee !important;
+  margin: 0 -30px 50px;
+  padding: 50px 30px;
 }
 
 p.new_atelier {
