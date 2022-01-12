@@ -34,8 +34,10 @@
         </section>
 
 
+        <div class="container">
+            <?php get_template_part('pagination'); ?>
 
-        <?php get_template_part('pagination'); ?>
+        </div>
     <?php endif; ?>
 </main>
 
