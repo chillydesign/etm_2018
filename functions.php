@@ -892,32 +892,26 @@ include('functions_inscription.php');
 
 
 
+// CONVERT ACF  category field to a wordpress category
+// function add_cats_from_acf_to_videos() {
+//     $vids = get_posts(array('post_type'  => 'video', 'posts_per_page' => -1));
+//     foreach ($vids as $vid) {
+//         $ac = get_field('category', $vid->ID);
+//         if ($ac == 'atelier') {
+//             $a =  wp_set_post_terms($vid->ID,  array(12),  'video_cat');
+//             var_dump($a);
+//         } else if ($ac == 'masterclass') {
 
-function add_cats_from_acf_to_videos() {
-
-
-    $vids = get_posts(array('post_type'  => 'video', 'posts_per_page' => -1));
-    foreach ($vids as $vid) {
-
-        $ac = get_field('category', $vid->ID);
-        if ($ac == 'atelier') {
-
-            $a =  wp_set_post_terms($vid->ID,  array(12),  'video_cat');
-            var_dump($a);
-        } else if ($ac == 'masterclass') {
-
-            $a =  wp_set_post_terms($vid->ID,  array(14),  'video_cat');
-            var_dump($a);
-        } else if ($ac == 'plansdujour') {
-
-            $a =  wp_set_post_terms($vid->ID,  array(13),  'video_cat');
-            var_dump($a);
-        }
-    }
-}
-
-if (isset($_GET['testtest'])) {
-    add_action('init', 'add_cats_from_acf_to_videos', 100);
-}
-
+//             $a =  wp_set_post_terms($vid->ID,  array(14),  'video_cat');
+//             var_dump($a);
+//         } else if ($ac == 'plansdujour') {
+//             $a =  wp_set_post_terms($vid->ID,  array(13),  'video_cat');
+//             var_dump($a);
+//         }
+//     }
+// }
+// if (isset($_GET['testtest'])) {
+//     add_action('init', 'add_cats_from_acf_to_videos', 100);
+// }
+// CONVERT ACF  category field to a wordpress category
     ?>
