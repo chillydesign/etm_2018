@@ -901,11 +901,11 @@ function add_cats_from_acf_to_videos() {
 
         $ac = get_field('category', $vid->ID);
         if ($ac == 'atelier') {
-            wp_set_post_categories($vid->ID,  array(12));
+            wp_set_post_terms($vid->ID,  'auditions-concerts', 'video_cat');
         } else if ($ac == 'masterclass') {
-            wp_set_post_categories($vid->ID,  array(14));
+            wp_set_post_terms($vid->ID,  'les-masterclasses-de-letm', 'video_cat');
         } else if ($ac == 'plansdujour') {
-            wp_set_post_categories($vid->ID,  array(13));
+            wp_set_post_terms($vid->ID,  'les-plans-du-jour', 'video_cat');
         }
     }
 }
