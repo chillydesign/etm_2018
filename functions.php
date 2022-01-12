@@ -904,7 +904,7 @@ function add_cats_from_acf_to_videos() {
     }
 }
 
-if ($_GET['testtest']) {
+if (isset($_GET['testtest'])) {
     add_cats_from_acf_to_videos();
 }
 
