@@ -129,7 +129,7 @@ add_action('after_setup_theme', 'remove_json_api');
 
 
 function wf_version() {
-    return '0.1.8';
+    return '0.1.9';
 }
 
 
@@ -674,7 +674,7 @@ function create_post_type_video() {
         'show_in_nav_menus'          => true,
         'show_tagcloud'              => false,
     );
-    register_taxonomy('video_cat', array('video'), $args_vid_cat);
+    register_taxonomy('vids', array('video'), $args_vid_cat);
 
 
 
@@ -706,7 +706,7 @@ function create_post_type_video() {
                 'thumbnail'
             ), // Go to Dashboard Custom HTML5 Blank post for supports
             'can_export' => true, // Allows export in Tools > Export
-            'taxonomies' => array('video_cat') // Add Category and Post Tags support
+            'taxonomies' => array('vids') // Add Category and Post Tags support
         )
     );
 }
@@ -898,14 +898,14 @@ include('functions_inscription.php');
 //     foreach ($vids as $vid) {
 //         $ac = get_field('category', $vid->ID);
 //         if ($ac == 'atelier') {
-//             $a =  wp_set_post_terms($vid->ID,  array(12),  'video_cat');
+//             $a =  wp_set_post_terms($vid->ID,  array(12),  'vids');
 //             var_dump($a);
 //         } else if ($ac == 'masterclass') {
 
-//             $a =  wp_set_post_terms($vid->ID,  array(14),  'video_cat');
+//             $a =  wp_set_post_terms($vid->ID,  array(14),  'vids');
 //             var_dump($a);
 //         } else if ($ac == 'plansdujour') {
-//             $a =  wp_set_post_terms($vid->ID,  array(13),  'video_cat');
+//             $a =  wp_set_post_terms($vid->ID,  array(13),  'vids');
 //             var_dump($a);
 //         }
 //     }
