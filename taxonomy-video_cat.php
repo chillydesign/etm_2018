@@ -34,7 +34,7 @@
         </section>
 
 
-        <div class="container">
+        <div class="wrapper">
             <?php get_template_part('pagination'); ?>
 
         </div>
