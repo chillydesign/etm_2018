@@ -902,22 +902,22 @@ function add_cats_from_acf_to_videos() {
         $ac = get_field('category', $vid->ID);
         if ($ac == 'atelier') {
 
-            $a =  wp_set_object_terms($vid->ID,  array(12),  'video_cat');
+            $a =  wp_set_post_terms($vid->ID,  array(12),  'video_cat');
             var_dump($a);
         } else if ($ac == 'masterclass') {
 
-            $a =  wp_set_object_terms($vid->ID,  array(14),  'video_cat');
+            $a =  wp_set_post_terms($vid->ID,  array(14),  'video_cat');
             var_dump($a);
         } else if ($ac == 'plansdujour') {
 
-            $a =  wp_set_object_terms($vid->ID,  array(13),  'video_cat');
+            $a =  wp_set_post_terms($vid->ID,  array(13),  'video_cat');
             var_dump($a);
         }
     }
 }
 
 if (isset($_GET['testtest'])) {
-    add_cats_from_acf_to_videos();
+    add_action('init', 'add_cats_from_acf_to_videos', 100);
 }
 
     ?>
