@@ -890,4 +890,22 @@ function format_text_for_mailto_param($text) {
 include('functions_inscription.php');
 
 
+
+
+
+function add_cats_from_acf_to_videos() {
+
+
+    $vids = get_posts(array('post_type'  => 'video', 'posts_per_page' => -1));
+    foreach ($vids as $vid) {
+
+        $ac = get_field('category', $vid->ID);
+        var_dump($ac);
+    }
+}
+
+if ($_GET['testtest']) {
+    add_cats_from_acf_to_videos();
+}
+
     ?>
