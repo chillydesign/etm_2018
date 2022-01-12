@@ -900,7 +900,13 @@ function add_cats_from_acf_to_videos() {
     foreach ($vids as $vid) {
 
         $ac = get_field('category', $vid->ID);
-        var_dump($ac);
+        if ($ac == 'atelier') {
+            wp_set_post_categories($vid->ID,  array(12));
+        } else if ($ac == 'masterclass') {
+            wp_set_post_categories($vid->ID,  array(14));
+        } else if ($ac == 'plansdujour') {
+            wp_set_post_categories($vid->ID,  array(13));
+        }
     }
 }
 
