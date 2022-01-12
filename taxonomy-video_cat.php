@@ -2,16 +2,42 @@
 
 <main role="main">
     <!-- section -->
-    <section>
+    <section class="pagetitle">
+        <div class="wrapper">
 
-        <h1><?php single_cat_title() ?></h1>
+            <h1><?php single_cat_title() ?></h1>
 
-        <?php get_template_part('loop'); ?>
-
-        <?php get_template_part('pagination'); ?>
-
+        </div>
     </section>
-    <!-- /section -->
+
+    <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+
+
+            <section class="video">
+                <div class="wrapper">
+                    <div class="row">
+                        <?php $i = 1; ?>
+                        <?php while ($video_loop->have_posts()) : $video_loop->the_post() ?>
+                            <?php $post_id = get_the_ID(); ?>
+                            <?php $url = wp_get_attachment_url(get_post_thumbnail_id($post->ID)); ?>
+
+                            <div class="col-sm-6" style="margin-bottom:40px;">
+                                <?php the_content(); ?>
+                                <h5><?php the_title(); ?></h5>
+                            </div>
+                            <?php if ($i % 2 == 0) { ?>
+                    </div>
+                    <div class="row"> <?php } ?>
+                    <?php $i++; ?>
+                <?php endwhile; ?>
+                    </div>
+            </section>
+
+
+
+            <?php get_template_part('pagination'); ?>
+        <?php endwhile; ?>
+    <?php endif; ?>
 </main>
 
 <?php get_sidebar(); ?>
