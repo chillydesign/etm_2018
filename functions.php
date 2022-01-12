@@ -648,8 +648,37 @@ function create_post_type_eleve() {
 
 
 function create_post_type_video() {
-    register_taxonomy_for_object_type('category', 'video'); // Register Taxonomies for Category
-    register_taxonomy_for_object_type('post_tag', 'video');
+
+    $que_cat = array(
+        'name'                       => 'Catégories',
+        'singular_name'              => 'Catégorie',
+        'menu_name'                  => 'Catégorie',
+        'all_items'                  => 'Toutes les Catégories',
+        'parent_item'                => 'Catégorie parente',
+        'parent_item_colon'          => 'Catégorie parente:',
+        'new_item_name'              => 'Nom de la nouvelle categorie',
+        'add_new_item'               => 'Ajouter une categorie',
+        'edit_item'                  => 'Modifier categorie',
+        'update_item'                => 'Mettre à jur la categorie',
+        'separate_items_with_commas' => 'Separer les categories avec des virgules',
+        'search_items'               => 'Chercher dans les categories',
+        'add_or_remove_items'        => 'Ajouter ou supprimer des categories',
+        'choose_from_most_used'      => 'Choisir parmi les categories les plus utilisées',
+    );
+    $args_vid_cat = array(
+        'labels'                     => $que_cat,
+        'hierarchical'               => true,
+        'public'                     => true,
+        'show_ui'                    => true,
+        'show_admin_column'          => true,
+        'show_in_nav_menus'          => true,
+        'show_tagcloud'              => false,
+    );
+    register_taxonomy('video_cat', array('video'), $args_vid_cat);
+
+
+
+
     register_post_type(
         'video', // Register Custom Post Type
         array(
@@ -677,7 +706,7 @@ function create_post_type_video() {
                 'thumbnail'
             ), // Go to Dashboard Custom HTML5 Blank post for supports
             'can_export' => true, // Allows export in Tools > Export
-            'taxonomies' => array() // Add Category and Post Tags support
+            'taxonomies' => array('video_cat') // Add Category and Post Tags support
         )
     );
 }
