@@ -57,7 +57,7 @@ if (have_rows('sections')) {
 								<div class="col-sm-6"><?php echo $column2; ?></div>
 							</div>
 						</div>
-						<? } elseif ($proportion == "onetwo") { ?>
+					<? } elseif ($proportion == "onetwo") { ?>
 						<div class="wrapper">
 							<div class="row">
 								<div class="col-sm-4"><?php echo $column1; ?></div>
@@ -152,36 +152,42 @@ if (have_rows('sections')) {
 					$column5 = get_sub_field('column5');
 					$image6 = get_sub_field('image6');
 					$column6 = get_sub_field('column6');
-					if($image5 AND $image6){$colclass ='col-sm-2'; $textmargin="30px";}else{$colclass='col-sm-3 col-xs-6';$textmargin="0px";}
+					if ($image5 and $image6) {
+						$colclass = 'col-sm-2';
+						$textmargin = "30px";
+					} else {
+						$colclass = 'col-sm-3 col-xs-6';
+						$textmargin = "0px";
+					}
 				?>
 					<div class="wrapper">
 						<div class="row specialli">
-							<div class="<?php echo $colclass;?>">
+							<div class="<?php echo $colclass; ?>">
 								<div style="width:100%; padding: 50%; background: url(<?php echo $image1['url']; ?>) no-repeat; background-size: cover; margin-bottom:30px; border-radius:50%;"></div>
-								<div style="margin-left:<?php echo $textmargin;?>;"><?php echo $column1; ?></div>
+								<div style="margin-left:<?php echo $textmargin; ?>;"><?php echo $column1; ?></div>
 							</div>
-							<div class="<?php echo $colclass;?>">
+							<div class="<?php echo $colclass; ?>">
 								<div style="width:100%; padding: 50%; background: url(<?php echo $image2['url']; ?>) no-repeat; background-size: cover; margin-bottom:30px; border-radius:50%;"></div>
-								<div style="margin-left:<?php echo $textmargin;?>;"><?php echo $column2; ?></div>
+								<div style="margin-left:<?php echo $textmargin; ?>;"><?php echo $column2; ?></div>
 							</div>
-							<div class="<?php echo $colclass;?>">
+							<div class="<?php echo $colclass; ?>">
 								<div style="width:100%; padding: 50%; background: url(<?php echo $image3['url']; ?>) no-repeat; background-size: cover; margin-bottom:30px; border-radius:50%;"></div>
-								<div style="margin-left:<?php echo $textmargin;?>;"><?php echo $column3; ?></div>
+								<div style="margin-left:<?php echo $textmargin; ?>;"><?php echo $column3; ?></div>
 							</div>
-							<div class="<?php echo $colclass;?>">
+							<div class="<?php echo $colclass; ?>">
 								<div style="width:100%; padding: 50%; background: url(<?php echo $image4['url']; ?>) no-repeat; background-size: cover; margin-bottom:30px; border-radius:50%;"></div>
-								<div style="margin-left:<?php echo $textmargin;?>;"><?php echo $column4; ?></div>
+								<div style="margin-left:<?php echo $textmargin; ?>;"><?php echo $column4; ?></div>
 							</div>
-							<?php if($image5):?>
-							<div class="col-sm-2">
-								<div style="width:100%; padding: 50%; background: url(<?php echo $image5['url']; ?>) no-repeat; background-size: cover; margin-bottom:30px; border-radius:50%;"></div>
-								<div style="margin-left:30px;"><?php echo $column5; ?></div>
-							</div>
-							<div class="col-sm-2">
-								<div style="width:100%; padding: 50%; background: url(<?php echo $image6['url']; ?>) no-repeat; background-size: cover; margin-bottom:30px; border-radius:50%;"></div>
-								<div style="margin-left:30px;"><?php echo $column6; ?></div>
-							</div>
-							<?php endif;?>
+							<?php if ($image5) : ?>
+								<div class="col-sm-2">
+									<div style="width:100%; padding: 50%; background: url(<?php echo $image5['url']; ?>) no-repeat; background-size: cover; margin-bottom:30px; border-radius:50%;"></div>
+									<div style="margin-left:30px;"><?php echo $column5; ?></div>
+								</div>
+								<div class="col-sm-2">
+									<div style="width:100%; padding: 50%; background: url(<?php echo $image6['url']; ?>) no-repeat; background-size: cover; margin-bottom:30px; border-radius:50%;"></div>
+									<div style="margin-left:30px;"><?php echo $column6; ?></div>
+								</div>
+							<?php endif; ?>
 						</div>
 					</div>
 				<?php }
@@ -412,7 +418,8 @@ if (have_rows('sections')) {
 																<?php //echo $url;
 																?>) no-repeat; background-size: cover; margin-bottom:20px; margin-top:6px;"></div>
 															-->
-															<?php if (!empty($url)) { ?><img src="<?php echo $url; ?>"><?php } ?></a></div>
+															<?php if (!empty($url)) { ?><img src="<?php echo $url; ?>"><?php } ?>
+														</a></div>
 
 												</div>
 											</div>
@@ -457,7 +464,7 @@ if (have_rows('sections')) {
 					</ul>
 					<?php while (have_rows('album')) : the_row(); ?>
 						<?php $images = get_sub_field('photos'); ?>
-						<?php $ulclass = sanitize_title( get_sub_field('title') .  ' album '; ?>
+						<?php $ulclass = sanitize_title(get_sub_field('title')) .  ' album '; ?>
 						<?php if ($i == 1) {
 							$ulclass .= ' current_album';
 						} ?>
