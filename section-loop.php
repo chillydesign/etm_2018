@@ -454,7 +454,7 @@ if (have_rows('sections')) {
 					<ul class="album_titles">
 						<?php while (have_rows('album')) : the_row(); ?>
 
-							<?php $liclass =  str_replace(' ', '', get_sub_field('title')); ?>
+							<?php $liclass =  sanitize_title(get_sub_field('title')); ?>
 							<?php if ($count == 1) {
 								$liclass .= ' current_title';
 							} ?>
