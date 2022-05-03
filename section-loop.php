@@ -457,7 +457,7 @@ if (have_rows('sections')) {
 					</ul>
 					<?php while (have_rows('album')) : the_row(); ?>
 						<?php $images = get_sub_field('photos'); ?>
-						<?php $ulclass = str_replace(' ', '', get_sub_field('title')) .  ' album '; ?>
+						<?php $ulclass = sanitize_title( get_sub_field('title') .  ' album '; ?>
 						<?php if ($i == 1) {
 							$ulclass .= ' current_album';
 						} ?>
