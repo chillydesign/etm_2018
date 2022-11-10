@@ -298,8 +298,7 @@ function send_inscription_emails($data) {
     wp_mail('event@etm.ch', $email_subject_for_admin, $email_content_for_admin, $headers);
 
 
-
-    $paragraph_for_user = '<p>Bonjour,</p><p> Votre demande de réservation pour l’événement ' .  $event_title . $nice_event_date  . ' a bien été prise en compte et nous vous en remercions.</p><p> <strong>Vous recevrez prochainement de notre part la confirmation de réservation à cet événement.</strong></p><p> En vous souhaitant d’ores et déjà un excellent moment musical ! </p><p>Bien cordialement, <br/> L’équipe ETM</p>';
+    $paragraph_for_user = '<p>Bonjour,</p><p>Nous vous remercions d’avoir réservé votre place pour l’événement : ' .  $event_title . '  ' .  $nice_event_date  . '</p><p>Merci de bien vouloir présenter le présent e-mail, qui fera office de billet d’entrée, à présenter à notre billetterie. Le paiement se fait sur place en francs suisses. Nous ne pourrons malheureusement pas accepter les €, ni les cartes bancaires.</p><p>Attention, les réservations sont nominatives et elles n’incluent pas la réservation d’une autre soirée. </p><p>Vous avez un empêchement ?! Merci de nous prévenir par e-mail (laure@etm.ch) afin que nous puissions remettre votre place à une autre personne ! </p><p>Nous vous souhaitons d’ores et déjà une agréable soirée musicale !</p><p>Laure</p>';
 
     $paragraph_for_user .= $paragraph_fields;
 
