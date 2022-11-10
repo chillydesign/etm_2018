@@ -47,14 +47,15 @@
 									<h2><a href="<?php echo $permalink; ?>"><?php echo $title; ?></a></h2>
 									<?php $date_field = get_field('date'); ?>
 									<?php if (!empty($date_field)) { ?><h2 style="font-weight:300; margin:-30px 0 30px; font-size:1.2em;"><?php the_field('date'); ?></h2><?php } ?>
-									<p><?php the_excerpt(); ?>&hellip; <a href="<?php echo $permalink; ?>; ?>"><?php _e('Lire la suite', 'webfactor'); ?></a></p>
+									<p><?php the_excerpt(); ?>&hellip; <a href="<?php echo $permalink; ?>"><?php _e('Lire la suite', 'webfactor'); ?></a></p>
 
 									<?php generate_social_links($permalink, $title); ?>
 								</div>
 								<div class="col-md-3 col-md-pull-7" style="padding: 0px 60px 0 0;"><a href="<?php echo $permalink; ?>">
 										<!-- <div style="width:100%; padding: 37%; background:url(<?php //echo $url;
 																									?>) no-repeat; background-size: cover; margin-bottom:20px; margin-top:6px;"></div> -->
-										<img src="<?php echo $url; ?>" <?php if (get_field('photo_circulaire')) { ?> style="border-radius:50%;" <?php } ?>></a></div>
+										<img src="<?php echo $url; ?>" <?php if (get_field('photo_circulaire')) { ?> style="border-radius:50%;" <?php } ?>>
+									</a></div>
 
 							</div>
 						</div>
