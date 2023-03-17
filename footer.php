@@ -2,8 +2,8 @@
 			<footer class="footer" role="contentinfo">
 				<div class="footer-top" style="padding-left:15px; padding-right:15px;">
 					<div style="float:left; margin-bottom:10px;">
-						<?php _e('ETM – école des musiques actuelles', 'webfactor'); ?><br>
-						Route des Acacias 8, 1227 Les Acacias, Genève, Suisse | +41 (0)22 344 44 22 | <a href="mailto:info@etm.ch"> info@etm.ch</a><br>
+						<?php _e('eMa, Ecole des Musiques Actuelles', 'webfactor'); ?><br>
+						Passage Marie-Claude Leburgue 2, 1205 Genève | +41 (0)22 344 44 22 | <a href="mailto:info@etm.ch"> info@etm.ch</a><br>
 						<div style="margin-top: 5px;">
 							<?php _e('L’ETM, école accréditée par le département de l’instruction publique, de la culture et du sport, bénéficie du soutien de la République et canton de Genève.', 'webfactor'); ?></div>
 					</div>
