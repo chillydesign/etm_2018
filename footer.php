@@ -3,7 +3,10 @@
 				<div class="footer-top" style="padding-left:15px; padding-right:15px;">
 					<div style="float:left; margin-bottom:10px;">
 						<?php _e('eMa, Ecole des Musiques Actuelles', 'webfactor'); ?><br>
-						Passage Marie-Claude Leburgue 2, 1205 Genève | +41 (0)22 344 44 22 | <a href="mailto:info@etm.ch"> info@etm.ch</a><br>
+						Route des Acacias 8, 1227 Les Acacias, Genève, Suisse | +41 (0)22 344 44 22 | <a href="mailto:info@etm.ch"> info@etm.ch</a><br>
+						Nouvelle adresse dès le 21.08.23 eMa, Ecole des Musiques Actuelles, Passage Marie-Claude Leburgue 2, 1205 Genève
+
+
 						<div style="margin-top: 5px;">
 							<?php _e('eMa, école accréditée par le département de l’instruction publique, de la culture et du sport, bénéficie du soutien de la République et canton de Genève.', 'webfactor'); ?></div>
 					</div>
