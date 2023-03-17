@@ -1511,11 +1511,11 @@ table.tarif_table {
   }
 
   .logo {
-    background-size: 230px !important;
+    background-size: 300px !important;
     width: 270px;
     height: 130px;
     margin: 20px 0 0;
-    background: url(img/ema_logo.svg) no-repeat;
+    background: url(img/ETM-site-mobile.jpg) no-repeat;
   }
 
   h2 {
