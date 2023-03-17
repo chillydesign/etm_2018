@@ -7,7 +7,7 @@
 						Nouvelle adresse dès le 21.08.23 eMa, Ecole des Musiques Actuelles, Passage Marie-Claude Leburgue 2, 1205 Genève
 
 
-						<div style="margin-top: 5px;">
+						<div style="margin-top: 0px;">
 							<?php _e('eMa, école accréditée par le département de l’instruction publique, de la culture et du sport, bénéficie du soutien de la République et canton de Genève.', 'webfactor'); ?></div>
 					</div>
 					<div class="socialmedia">
