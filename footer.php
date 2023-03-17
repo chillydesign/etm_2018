@@ -4,7 +4,8 @@
 					<div style="float:left; margin-bottom:10px;">
 						<?php _e('eMa, Ecole des Musiques Actuelles', 'webfactor'); ?><br>
 						Route des Acacias 8, 1227 Les Acacias, Genève, Suisse | +41 (0)22 344 44 22 | <a href="mailto:info@ema.school">info@ema.school</a><br>
-						Nouvelle adresse dès le 21.08.23 eMa, Ecole des Musiques Actuelles, Passage Marie-Claude Leburgue 2, 1205 Genève
+						<?php _e('Nouvelle adresse dès le 21.08.23', 'webfactor'); ?> eMa, Ecole des Musiques Actuelles, Passage Marie-Claude Leburgue 2, 1205 Genève
+
 
 
 						<div style="margin-top: 0px;">
