@@ -256,8 +256,8 @@ function send_inscription_emails($data) {
     }
 
 
-    $headers = 'From: ETM <event@etm.ch>' . "\r\n";
-    $headers .= 'Reply-To: ETM <event@etm.ch>' . "\r\n";
+    $headers = 'From: eMa <event@etm.ch>' . "\r\n";
+    $headers .= 'Reply-To: eMa <event@etm.ch>' . "\r\n";
     $emailheader = file_get_contents(dirname(__FILE__) . '/emails/email_header.php');
     $emailfooter = file_get_contents(dirname(__FILE__) . '/emails/email_footer.php');
     add_filter('wp_mail_content_type',  'api_return_html');
@@ -302,7 +302,7 @@ function send_inscription_emails($data) {
 
     $paragraph_for_user .= $paragraph_fields;
 
-    $email_subject_for_user = 'ETM  - Inscription à l’évènement  ' . $event_title;
+    $email_subject_for_user = 'eMa  - Inscription à l’évènement  ' . $event_title;
     $email_content_for_user = $emailheader . $paragraph_for_user .  $emailfooter;
 
     wp_mail($_POST['email'], $email_subject_for_user, $email_content_for_user, $headers);

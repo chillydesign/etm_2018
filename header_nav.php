@@ -5,7 +5,7 @@
 
         <a class="logo" href="<?php echo home_url(); ?>">
           <div>
-            ETM - <?php _e('Ecole des Musiques Actuelles', 'webfactor'); ?>
+            eMa - <?php _e('Ecole des Musiques Actuelles', 'webfactor'); ?>
           </div>
         </a>
 

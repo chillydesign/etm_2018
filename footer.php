@@ -5,7 +5,7 @@
 						<?php _e('eMa, Ecole des Musiques Actuelles', 'webfactor'); ?><br>
 						Passage Marie-Claude Leburgue 2, 1205 Genève | +41 (0)22 344 44 22 | <a href="mailto:info@etm.ch"> info@etm.ch</a><br>
 						<div style="margin-top: 5px;">
-							<?php _e('L’ETM, école accréditée par le département de l’instruction publique, de la culture et du sport, bénéficie du soutien de la République et canton de Genève.', 'webfactor'); ?></div>
+							<?php _e('eMa, école accréditée par le département de l’instruction publique, de la culture et du sport, bénéficie du soutien de la République et canton de Genève.', 'webfactor'); ?></div>
 					</div>
 					<div class="socialmedia">
 						<a target="_blank" href="https://www.youtube.com/channel/UCvwJprSEMiebZqfYamLsYTQ">
