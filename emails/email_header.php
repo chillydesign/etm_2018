@@ -140,7 +140,7 @@
                 <tr>
                     <td bgcolor="#ffffff" align="center">
 
-                        <a href="https://etm.ch/" target="_blank"><img src="https://etm.ch/wp-content/themes/etm_2018/img/etm-email-header.jpg" width="100%" height="" border="0" align="left" style="width: 100%; max-width:600px; margin-bottom: 15px;">
+                        <a href="https://etm.ch/" target="_blank"><img src="https://etm.ch/wp-content/themes/etm_2018/img/ewa-email-header.jpg" width="100%" height="" border="0" align="left" style="width: 100%; max-width:600px; margin-bottom: 15px;">
                         </a>
                     </td>
                 </tr>
