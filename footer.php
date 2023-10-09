@@ -3,25 +3,22 @@
 				<div class="footer-top" style="padding-left:15px; padding-right:15px;">
 					<div style="float:left; margin-bottom:10px;">
 						<?php _e('eMa, Ecole des Musiques Actuelles', 'webfactor'); ?><br>
-						Route des Acacias 8, 1227 Les Acacias, Genève, Suisse | +41 (0)22 344 44 22 | <a href="mailto:info@ema.school">info@ema.school</a><br>
-						<?php _e('Nouvelle adresse dès le 21.08.23', 'webfactor'); ?> eMa, Ecole des Musiques Actuelles, Passage Marie-Claude Leburgue 2, 1205 Genève
-
-
+						Passage Marie-Claude Leburgue 2 (anciennement Passage de la Radio 2), 1205 Genève, Suisse | +41 (0)22 344 44 22 | <a href="mailto:info@ema.school">info@ema.school</a><br>
 
 						<div style="margin-top: 0px;">
-							<?php _e('eMa, école accréditée par le département de l’instruction publique, de la culture et du sport, bénéficie du soutien de la République et canton de Genève.', 'webfactor'); ?></div>
+							<?php _e('Certified by the DIP, with the support of the Republic and Canton of Geneva', 'webfactor'); ?></div>
 					</div>
 					<div class="socialmedia">
 						<a target="_blank" href="https://www.youtube.com/channel/UCvwJprSEMiebZqfYamLsYTQ">
 							<div class="socialicon youtube"></div>
 						</a>
-						<a target="_blank" href="https://www.facebook.com/etm.evenements/i">
+						<a target="_blank" href="https://www.facebook.com/eMaGeneve/">
 							<div class="socialicon facebook"></div>
 						</a>
-						<a target="_blank" href="https://www.instagram.com/etm_geneve/">
+						<a target="_blank" href="https://www.instagram.com/ema_ecoledesmusiquesactuelles/">
 							<div class="socialicon instagram"></div>
 						</a>
-						<a target="_blank" href="https://soundcloud.com/etm_geneve">
+						<a target="_blank" href="https://soundcloud.com/ema_geneve">
 							<div class="socialicon cloud"></div>
 						</a>
 					</div>
